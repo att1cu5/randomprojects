@@ -16,7 +16,7 @@ print("b value:")
 b=float(input())
 print("c value:")
 c=float(input())
-
+##
 def f(a,i,b,c): 
     return float (a*i*i+b*i+c)
 i=xmin
