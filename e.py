@@ -1,10 +1,16 @@
 d=[{0,0,0},{0,0,0},{0,0,0},{0,0,0}]
 while(0==0):
-    i=int(input("pick a number that is not 1 or 2 or -1 or -2 or 0:"))
+    i=float(input("pick a number:"))
     if(i!=1 and i!=2 and i!=-1 and i!=-2 and i!=0):
         break
-    elif(i==1 or i==2 or i==-1 or i==-2 or i==0):
-        i=complex(i,i)
+    elif(i==1 or i==2):
+        i=complex(i,-i)
+        break
+    elif(i==-1 or i==-2):
+        i=complex(-i,i)
+        break
+    elif(i==0):
+        i=complex(0,1)
         break
 d[2]={0,-i,-i+1}
 d[1]={-i-1,-i,0}
