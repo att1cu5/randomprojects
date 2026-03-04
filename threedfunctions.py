@@ -1,4 +1,3 @@
-
 f=9
 t=-3
 op=5
@@ -27,3 +26,4 @@ print("derivative of f(x) when y=0 x="+str((-(io-f)/(2*k))))
 xi=(-(io-f)/(2*k))
 print("find y while x="+str((-(io-f)/(2*k))))
 print("y="+str(float(opi(f,(io-f),oi,xi))))
+print("z=x^2+3y")
