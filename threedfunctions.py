@@ -10,6 +10,8 @@ def g(y,x,l):
 
         x=x-complex(-1,s)
     return(x*y)
+def ify(iop,opl):
+    return iop*iop+3*opl
 def opi(lo,ol,piu,lp):
     return lo*lp*lp+ol*lp+piu
 p=g(f,t,op)
@@ -26,4 +28,14 @@ print("derivative of f(x) when y=0 x="+str((-(io-f)/(2*k))))
 xi=(-(io-f)/(2*k))
 print("find y while x="+str((-(io-f)/(2*k))))
 print("y="+str(float(opi(f,(io-f),oi,xi))))
+yio=float(opi(f,(io-f),oi,xi))
 print("z=x^2+3y")
+print("z="+str(float(ify(xi,yio))))
+zi=ify(xi,yio)
+print("f(x)="+str(float(xi))+"x^2+"+str(float(yio))+"x+"+str(float(zi)))
+jk=opi(xi,yio,zi,xi)
+j=xi
+ops=ify(xi,opi(xi,yio,zi,xi))
+print("y=",opi(xi,yio,zi,xi))
+print("x=",xi)
+print("z=",ify(xi,opi(xi,yio,zi,xi)))
