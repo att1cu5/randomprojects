@@ -14,5 +14,5 @@ for i in range(0,5):
     LO[i]=iop
     fgo+=(deltau*k[i])**2
     OL[i]=fgo
-print((iop)+(fgo))
+print((iop)+((-fgo.real-fgo.imag)*(fgo.real+fgo.imag)))
 J=(iop)+(fgo)
