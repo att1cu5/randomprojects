@@ -34,3 +34,6 @@ print("R=",R)
 print(5,"=",R*iop,"+Q(",uoil*uiol,")")
 print("find Q")
 print("Q=",(5-(R*iop))/(uoil*uiol))
+Q=(5-(R*iop))/(uoil*uiol)
+J=R*JL+JK*Q
+print("J=",J)
