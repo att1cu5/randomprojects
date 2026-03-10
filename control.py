@@ -10,9 +10,13 @@ r=0
 iop=0
 fgo=0
 for i in range(0,5):
-    iop+=((uio[i]*k[i])-(uio[i-1]*k[i]))**2
+    iop+=((uio[i])-(uio[i-1]))**2
     LO[i]=iop
     fgo+=(deltau*k[i])**2
     OL[i]=fgo
-print((iop)+((-fgo.real-fgo.imag)*(fgo.real+fgo.imag)))
-J=(iop)+(fgo)
+uiol=fgo.real+fgo.imag
+uoil=fgo.real-fgo.imag
+print(5,"=","R(",uoil*uiol,")+Q(",iop,")")
+JK=uoil*uiol
+JL=iop
+print("numbers:",JK," and ",JL)
