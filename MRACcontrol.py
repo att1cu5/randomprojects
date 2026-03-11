@@ -121,7 +121,7 @@ while(time<=5):
             Davg=Davg+coeffsD
 fa=time+1
 fb=time**2+time
-print("time functionA: ",fa)
+print("time functionA: ",fa/2)
 print("time functionB: ",fb)
 Aavg=Aavg/((time-0.1)/0.1)
 Bavg=Bavg/((time-0.1)/0.1)
@@ -140,7 +140,7 @@ HIGHc=realC+(Cavg*errorC)
 print("predicted real value of coefficient C low value:",realC-(Cavg*errorC))
 print("predicted real value of coefficient C high value:",realC+(Cavg*errorC))
 preC=(HIGHc+LOWc)/2
-print("predicted value: ",preC)
+print("predicted value: ",preC*(fa))
 
 print("real value: ",coeffsC)
 print("predicted real value of coefficient A low value:",realA-(Aavg*errorA))
@@ -151,5 +151,5 @@ print("real value: ",coeffsA)
 print("predicted real value of coefficient B low value:",realB-(Bavg*errorB))
 print("predicted real value of coefficient B high value:",realB+(Bavg*errorB))
 preB=(HIGHb+LOWb)/2
-print("predicted value: ",preB)
+print("predicted value: ",preB*(fa/2))
 print("real value: ",coeffsB)
