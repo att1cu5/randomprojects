@@ -36,6 +36,6 @@ coeffsA=coeffs[0]
 coeffsB=coeffs[1]
 coeffsC=coeffs[2]
 coeffsD=coeffs[3]
-
+print(str(coeffsD)+"x^3+"+str(coeffsC)+"+x^2"+str(coeffsB)+"x+"+str(coeffsC))
 # To evaluate the polynomial function at a value (e.g., x=2):
 print("P(",time,") =", np.polyval(coeffs, time))
