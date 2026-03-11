@@ -1,5 +1,9 @@
 import numpy as np
 time=0.1
+Aavg=0
+Bavg=0
+Cavg=0
+Davg=0
 while(time<1):
     AMatrix=[[4,10,0],[1,9,0],[0,4,10]]
     BMatrix=[[0,0,0],[0,0,0],[0,0,0]]
@@ -32,12 +36,20 @@ while(time<1):
     # Convert eigenvalues to polynomial coefficients (p(x) = x^3 + c2*x^2 + c1*x + c0)
     coeffs = np.poly(eigenvalues)
     
-    print("Polynomial Coefficients:", coeffs)
+    #print("Polynomial Coefficients:", coeffs)
     coeffsA=coeffs[0]
     coeffsB=coeffs[1]
     coeffsC=coeffs[2]
     coeffsD=coeffs[3]
-    print(str(coeffsD)+"x^3+"+str(coeffsC)+"+x^2"+str(coeffsB)+"x+"+str(coeffsC))
+    #print(str(coeffsD)+"x^3+"+str(coeffsC)+"+x^2"+str(coeffsB)+"x+"+str(coeffsC))
     # To evaluate the polynomial function at a value (e.g., x=2):
-    print("P(",time,") =", np.polyval(coeffs, time))
-    time=time+0.1
+    #print("P(",time,") =", np.polyval(coeffs, time))
+    time=time+1
+    Aavg=Aavg+coeffsA
+    Bavg=Bavg+coeffsB
+    Cavg=Cavg+coeffsC
+    Davg=Davg+coeffsD
+print("average A: ",Aavg/time)
+print("average B: ",Bavg/time)
+print("average C: ",Cavg/time)
+print("average D: ",Aavg/time)
