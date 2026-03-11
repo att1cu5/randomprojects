@@ -45,7 +45,7 @@ while(time<=1):
             coeffsB=coeffs[1]
             coeffsC=coeffs[2]
             coeffsD=coeffs[3]
-            print(str(coeffsD)+"x^3+"+str(coeffsC)+"x^2"+str(coeffsB)+"x+"+str(coeffsA))
+            #print(str(coeffsD)+"x^3+"+str(coeffsC)+"x^2"+str(coeffsB)+"x+"+str(coeffsA))
             # To evaluate the polynomial function at a value (e.g., x=2):
             #print("P(",time,") =", np.polyval(coeffs, time))
             time=time+0.1
@@ -53,10 +53,10 @@ while(time<=1):
             Bavg=Bavg+coeffsB
             Cavg=Cavg+coeffsC
             Davg=Davg+coeffsD
-print("average A: ",Aavg/((time-0.1)/0.1))
-print("average B: ",Bavg/((time-0.1)/0.1))
-print("average C: ",Cavg/((time-0.1)/0.1))
-print("average D: ",Davg/((time-0.1)/0.1))
+print("average A: ",Aavg/((time-0.9)/0.1))
+print("average B: ",Bavg/((time-0.9)/0.1))
+print("average C: ",Cavg/((time-0.9)/0.1))
+print("average D: ",Davg/((time-0.9)/0.1))
 Aavg=Aavg/((time-0.1)/0.1)
 Bavg=Bavg/((time-0.1)/0.1)
 Cavg=Cavg/((time-0.1)/0.1)
@@ -74,7 +74,7 @@ print("errorC percentage: ",errorC*100,"%")
 time=0.1
 
 
-while(time<=1):
+while(time<=1.1):
             AMatrix=[[4,10,0],[1,9,0],[0,4,10]]
             BMatrix=[[0,0,0],[0,0,0],[0,0,0]]
             np.NMatrix=[[0,0,0],[0,0,0],[0,0,0]]
@@ -123,10 +123,10 @@ Aavg=Aavg/((time-0.1)/0.1)
 Bavg=Bavg/((time-0.1)/0.1)
 Cavg=Cavg/((time-0.1)/0.1)
 Davg=Davg/((time-0.1)/0.1)
-print("average A: ",Aavg/((time-0.1)/0.1))
-print("average B: ",Bavg/((time-0.1)/0.1))
-print("average C: ",Cavg/((time-0.1)/0.1))
-print("average D: ",Davg/((time-0.1)/0.1))
+print("average A: ",Aavg)
+print("average B: ",Bavg)
+print("average C: ",Cavg)
+print("average D: ",Davg)
 LOWa=realA-(Aavg*errorA)
 HIGHa=realA+(Aavg*errorA)
 LOWb=realB-(Bavg*errorB)
@@ -136,12 +136,15 @@ HIGHc=realC+(Cavg*errorC)
 print("predicted real value of coefficient C low value:",realC-(Cavg*errorC))
 print("predicted real value of coefficient C high value:",realC+(Cavg*errorC))
 print("predicted value: ",(HIGHc+LOWc)/2)
+preC=(HIGHc+LOWc)/2
 print("real value: ",coeffsC)
 print("predicted real value of coefficient A low value:",realA-(Aavg*errorA))
 print("predicted real value of coefficient A high value:",realA+(Aavg*errorA))
 print("predicted value: ",(HIGHa+LOWa)/2)
+preA=(HIGHa+LOWa)/2
 print("real value: ",coeffsA)
 print("predicted real value of coefficient B low value:",realB-(Bavg*errorB))
 print("predicted real value of coefficient B high value:",realB+(Bavg*errorB))
+preB=(HIGHb+LOWb)/2
 print("predicted value: ",(HIGHb+LOWb)/2)
 print("real value: ",coeffsB)
