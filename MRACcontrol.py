@@ -32,5 +32,10 @@ eigenvalues = np.linalg.eigvals(A)
 coeffs = np.poly(eigenvalues)
 
 print("Polynomial Coefficients:", coeffs)
+coeffsA=coeffs[0]
+coeffsB=coeffs[1]
+coeffsC=coeffs[2]
+coeffsD=coeffs[3]
+
 # To evaluate the polynomial function at a value (e.g., x=2):
 print("P(",time,") =", np.polyval(coeffs, time))
