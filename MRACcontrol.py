@@ -74,7 +74,7 @@ print("errorC percentage: ",errorC*100,"%")
 time=0.1
 
 
-while(time<=5):
+while(time<=6):
             AMatrix=[[4,10,0],[1,9,0],[0,4,10]]
             BMatrix=[[0,0,0],[0,0,0],[0,0,0]]
             np.NMatrix=[[0,0,0],[0,0,0],[0,0,0]]
@@ -139,8 +139,9 @@ LOWc=realC-(Cavg*errorC)
 HIGHc=realC+(Cavg*errorC)
 print("predicted real value of coefficient C low value:",realC-(Cavg*errorC))
 print("predicted real value of coefficient C high value:",realC+(Cavg*errorC))
-preC=(HIGHc+LOWc)/2
-print("predicted value: ",preC*(fa))
+preC=((HIGHc+LOWc)/2)
+
+print("predicted value: ",preC)
 
 print("real value: ",coeffsC)
 print("predicted real value of coefficient A low value:",realA-(Aavg*errorA))
@@ -151,5 +152,6 @@ print("real value: ",coeffsA)
 print("predicted real value of coefficient B low value:",realB-(Bavg*errorB))
 print("predicted real value of coefficient B high value:",realB+(Bavg*errorB))
 preB=(HIGHb+LOWb)/2
-print("predicted value: ",preB*(fa/2))
+preB=preB*(fa/2)
+print("predicted value: ",preB)
 print("real value: ",coeffsB)
