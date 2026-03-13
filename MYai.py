@@ -93,7 +93,7 @@ class NeuralNetwork:
         )
 
     # ...
-class NeuralNetwork:
+class Neural_Network:
     def train( self,input_vectors, targets, iterations):
         cumulative_errors = []
         for current_iteration in range(iterations):
@@ -126,18 +126,35 @@ class NeuralNetwork:
 
         return cumulative_errors
 
-neural_networkA = str(NeuralNetwork())
-newB = re.sub(r'[^a-zA-Z0-9 ]', '',neural_networkA  )
-print(newB)
 
-neural_network =str(NeuralNetwork())
-newA = re.sub(r'[^a-zA-Z0-9 ]', '',neural_network  )
-print(newA)
+
+
+   
+learningRate=0.01
+hexB=9
+hexA=0
+u=0
+   
+    #print(newB)
+neural_networkA = str(NeuralNetwork(learningRate))
+newA = re.sub(r'[^a-zA-Z0-9 ]', '',neural_networkA  )
 hexA=newA.replace("mainNeuralNetwork object at ","")
+u=int(hexA,16)
+neural_networkB =str(NeuralNetwork(learningRate))
+newB = re.sub(r'[^a-zA-Z0-9 ]', '',neural_networkB  )
+        
 hexB=newB.replace("mainNeuralNetwork object at ","")
-print(hexA)
-print(hexB)
+       
+        
+hexA=int(hexA,16)
+hexB=int(hexB,16)
 
+        #print(newB)
+        
+print(hexB-hexA)
+    
+    
+    
 
 
 
