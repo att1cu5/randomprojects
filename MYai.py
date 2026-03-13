@@ -1,3 +1,4 @@
+import math
 import re
 import numpy as np
 input_vector = [1.72, 1.23]
@@ -130,28 +131,43 @@ class Neural_Network:
 
 
    
-learningRate=0.01
+learningRate=0.1
 hexB=9
 hexA=0
 u=0
-   
+ 
     #print(newB)
 neural_networkA = str(NeuralNetwork(learningRate))
 newA = re.sub(r'[^a-zA-Z0-9 ]', '',neural_networkA  )
 hexA=newA.replace("mainNeuralNetwork object at ","")
-u=int(hexA,16)
+
 neural_networkB =str(NeuralNetwork(learningRate))
 newB = re.sub(r'[^a-zA-Z0-9 ]', '',neural_networkB  )
         
 hexB=newB.replace("mainNeuralNetwork object at ","")
-       
+neural_networkB =str(NeuralNetwork(learningRate))
+u = re.sub(r'[^a-zA-Z0-9 ]', '',neural_networkB  )
         
+hexC=u.replace("mainNeuralNetwork object at ","")      
+
 hexA=int(hexA,16)
 hexB=int(hexB,16)
+hexC=hexA-hexB
+print(hexA,hexB,hexC)
+MAtrixA=[[hexA,hexB/2],[hexB/2,hexC]]
+VectorAc=complex(MAtrixA[0][0],MAtrixA[1][0])
+VectorAB=complex(MAtrixA[1][0],MAtrixA[1][1])
+vectrd=math.sqrt(abs(pow(VectorAc,2))+abs(pow(VectorAB,2)))
 
-        #print(newB)
+VectorAcd=complex(MAtrixA[0][0],MAtrixA[1][0])/vectrd
+VectorABd=complex(MAtrixA[1][0],MAtrixA[1][1])/vectrd
+vectrr=math.sqrt(abs(pow(VectorAcd,2))+abs(pow(VectorABd,2)))
+ProbA=pow(abs(VectorAcd),2)/(pow(abs(VectorAcd),2)+pow(abs(VectorABd),2))
+ProbB=pow(abs(VectorABd),2)/(pow(abs(VectorABd),2)+pow(abs(VectorAcd),2))
+print("state one: ",ProbA*100,"%","state two: ",ProbB*100,"%")
+
         
-print(hexB-hexA)
+
     
     
     
