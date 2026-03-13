@@ -1,4 +1,4 @@
-
+import re
 import numpy as np
 input_vector = [1.72, 1.23]
 weights_1 = [1.26, 0]
@@ -126,28 +126,17 @@ class NeuralNetwork:
 
         return cumulative_errors
 
-neural_networkA = NeuralNetwork()
+neural_networkA = str(NeuralNetwork())
+newB = re.sub(r'[^a-zA-Z0-9 ]', '',neural_networkA  )
+print(newB)
 
-
-input_vectors = np.array(
-        [
-            [3, 1.5],
-            [2, 1],
-            [4, 1.5],
-            [3, 4],
-            [3.5, 0.5],
-            [2, 0.5],
-            [5.5, 1],
-            [1, 1],
-        ]
-)
-
-targets = np.array([0, 1, 0, 1, 0, 1, 1, 0])
-learning_rate = 0.1
-
-neural_network = NeuralNetwork()
-
-
+neural_network =str(NeuralNetwork())
+newA = re.sub(r'[^a-zA-Z0-9 ]', '',neural_network  )
+print(newA)
+hexA=newA.replace("mainNeuralNetwork object at ","")
+hexB=newB.replace("mainNeuralNetwork object at ","")
+print(hexA)
+print(hexB)
 
 
 
