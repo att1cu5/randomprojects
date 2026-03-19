@@ -27,3 +27,4 @@ for uiol in range(0,10):
 
 for oler in range(0,10):
     print(round(uiop[oler])*round(uio[oler]))
+    OPL[oler]=round(uiop[oler])*round(uio[oler])
