@@ -1,4 +1,6 @@
 import math 
+uio=[0,0,0,0,0,0,0]
+uiop=[0,0,0,0,0,0,0]
 x=complex(0,0)
 o=[0,0,0,0,0,0,0]
 p=[0,0,0,0,0,0,0]
@@ -14,5 +16,7 @@ for i in range(0,7):
     o[i]=x
     u[i]=x.real
     p[i]=x.imag
-for ui in range(0,7):
-    print(PT[ui][0]*u[ui]*p[ui])
+for uiol in range(0,7):
+    for ui in range(0,7):
+        uio[ui]=(PT[ui][uiol]*u[ui])
+        uiop[ui]=(PT[ui][uiol]*p[ui])
