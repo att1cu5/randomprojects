@@ -21,10 +21,9 @@ for uiol in range(0,10):
         uio[ui]=(PT[ui][uiol]*u[ui])
        
         uiop[ui]=(PT[ui][uiol]*p[ui])
-        
-        
-
-
+Avg=0
 for oler in range(0,10):
     print(round(uiop[oler])*round(uio[oler]))
     OPL[oler]=round(uiop[oler])*round(uio[oler])
+    Avg+=OPL[oler]
+print("Average rate of change: ",Avg/10)
