@@ -19,4 +19,6 @@ for i in range(0,7):
 for uiol in range(0,7):
     for ui in range(0,7):
         uio[ui]=(PT[ui][uiol]*u[ui])
+        print(round(uio[ui]))
         uiop[ui]=(PT[ui][uiol]*p[ui])
+        print(round(uiop[ui]))
