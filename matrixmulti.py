@@ -1,3 +1,4 @@
+import cmath
 import math
 p=[[2,1],[3,4]]
 pa=p[0][0]
@@ -15,3 +16,8 @@ print(str(int(b+c))+"x+"+str(int(A))+"x^2"+"="+str(int(u)))
 print(str(int((b+c)/-1))+"x+"+str(int(A/-1))+"x^2"+"="+str(int(u/-1)))
 i=float(math.sqrt(abs(b+c)))
 print("("+str(i)+"-x)"+"("+str(i)+"+x)"+"="+str(int(u/-1)))
+print(str(round(i*i))+str(int(A/-1))+"x^2"+"="+str(int(u/-1)))
+print(str(int(A/-1))+"x^2"+"="+str(int((u/-1)-round(i*i))))
+print(str(int(A))+"x^2"+"="+str((int((u/-1)-round(i*i))*-1)))
+t=int((u/-1)-round(i*i))*-1
+print("x="+str(cmath.sqrt(t)))
