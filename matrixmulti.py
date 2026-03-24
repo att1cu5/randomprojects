@@ -21,3 +21,4 @@ print(str(int(A/-1))+"x^2"+"="+str(int((u/-1)-round(i*i))))
 print(str(int(A))+"x^2"+"="+str((int((u/-1)-round(i*i))*-1)))
 t=int((u/-1)-round(i*i))*-1
 print("x="+str(cmath.sqrt(t)))
+print("x=-"+str(cmath.sqrt(t)))
