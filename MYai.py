@@ -175,14 +175,14 @@ for k in range(0,34):
     errorrateB=0
     errorrateA=0
     for i in range(0,34):
-        x=m(0.2,0.4,0.23,0.45,0.34,0.67,0.78,9)
+        x=m(0.2,0.4,0.23,0.45,0.34,0.67,0.1,7)
         avgchangeinpercentone=x[0]
         avgchangeinpercenttwo=x[1]
-        x=m(0.2,0.4,0.23,0.45,0.34,0.67,0.78,7)
+        x=m(0.2,0.4,0.23,0.45,0.34,0.67,0.1,7)
         avgchangeinpercentone=x[0]-avgchangeinpercentone
         avgchangeinpercenttwo=x[1]-avgchangeinpercenttwo
     errorrateB=(avgchangeinpercentone/34)
     errorrateA=(avgchangeinpercenttwo/34)
+    print("Test number",k,":")
     print("average error rate for B:",errorrateB)
     print("average error rate for A:",errorrateA)
-
