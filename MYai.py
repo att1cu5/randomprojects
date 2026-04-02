@@ -170,13 +170,19 @@ def m(LR,IVA,IVB,WVA,WVB,WVC,WVD,HB):
     
     #print("state one: ",ProbA*100,"%","state two: ",ProbB*100,"%")
     return [ProbA*100,ProbB*100]
-accuracy=0
-for i in range(0,34):
+
+for k in range(0,34):
+    errorrateB=0
+    errorrateA=0
     for i in range(0,34):
-        x=m(0.2,0.4,0.23,0.45,0.34,0.67,0.78,7)
+        x=m(0.2,0.4,0.23,0.45,0.34,0.67,0.78,9)
         avgchangeinpercentone=x[0]
         avgchangeinpercenttwo=x[1]
         x=m(0.2,0.4,0.23,0.45,0.34,0.67,0.78,7)
         avgchangeinpercentone=x[0]-avgchangeinpercentone
         avgchangeinpercenttwo=x[1]-avgchangeinpercenttwo
-    accuracy=(avgchangeinpercentone/34)+(avgchangeinpercenttwo/34)
+    errorrateB=(avgchangeinpercentone/34)
+    errorrateA=(avgchangeinpercenttwo/34)
+    print("average error rate for B:",errorrateB)
+    print("average error rate for A:",errorrateA)
+
