@@ -1,5 +1,7 @@
 avgchangeinpercentone=0
 avgchangeinpercenttwo=0
+rateon=0
+rateoff=0
 def m(LR,IVA,IVB,WVA,WVB,WVC,WVD,HB):
     import math
     import re
@@ -187,10 +189,12 @@ for k in range(0,34):
     print("Test number",k,":")
     print("average error rate for B:",errorrateB)
     print("average error rate for A:",errorrateA)
-    if(errorrateB>0 or errorrateA>0):
-        accuracy+=1
-    if(errorrateB<0 or errorrateA<0):
-        accuracy+=1
+    if((errorrateB)>0 or (errorrateA)>0):
+        accuracy+=(1)
+    if((errorrateB)<0 or (errorrateA)<0):
+        accuracy+=(1)
 
 print("percentage when errorrate is 0 equals:",round(abs((1-(accuracy/34))*100)),"%")
 print("percentage when errorrate is not 0 equals:",round(abs(((accuracy/34))*100)),"%")
+rateon=round(abs(((accuracy/34))*100))
+rateoff=round(abs((1-(accuracy/34))*100))
