@@ -2,6 +2,9 @@ avgchangeinpercentone=0
 avgchangeinpercenttwo=0
 rateon=0
 rateoff=0
+ratei=0
+avgpositivedisplacement=0
+avgnegativedisplacement=0
 def m(LR,IVA,IVB,WVA,WVB,WVC,WVD,HB):
     import math
     import re
@@ -193,17 +196,22 @@ for k in range(0,34):
     print("average error rate for A:",errorrateA)
     if((errorrateB)>0):
         accuracyb+=1
+        avgpositivedisplacement+=errorrateB
+        
     if((errorrateA)>0):
         accuracyb+=1
+        avgpositivedisplacement+=errorrateA
     if((errorrateB)<0):
         accuracya+=1
+        avgnegativedisplacement+=errorrateB
     if((errorrateA)<0):
         accuracya+=1
+        avgnegativedisplacement+=errorrateA
     if((errorrateB)==0 or (errorrateA)==0):
         accuracy+=1
 rateon=round(abs(((accuracyb/68))*100))
 rateoff=round(abs(((accuracya/68))*100))
 ratei=100-(rateon+rateoff)
-print(rateon,"% of being positive")
-print(rateoff,"% of being negative")
+print(rateon,"% of being positive, avg error rate:",avgpositivedisplacement/68)
+print(rateoff,"% of being negative, avg error rate:",avgnegativedisplacement/68)
 print(ratei,"% of being zero")
