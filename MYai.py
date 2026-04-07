@@ -174,6 +174,7 @@ def m(LR,IVA,IVB,WVA,WVB,WVC,WVD,HB):
     return [ProbA*100,ProbB*100]
 accuracy=0
 accuracya=0
+accuracyb=0
 for k in range(0,34):
     
     errorrateB=0
@@ -190,14 +191,19 @@ for k in range(0,34):
     print("Test number",k,":")
     print("average error rate for B:",errorrateB)
     print("average error rate for A:",errorrateA)
-    if((errorrateB)>0 or (errorrateA)>0):
-        accuracy+=(1)
-    if((errorrateB)<0 or (errorrateA)<0):
-        accuracya+=(1)
-    
-print("percentage when errorrate is 0 equals:",round(abs((1-(accuracy/34))*100)),"%")
-print("percentage when errorrate is not 0 equals:",round(abs(((accuracy/34))*100)),"%")
-rateon=round(abs(((accuracy/34))*100))
-rateoff=round(abs(((accuracya/34))*100))
-print(rateon)
-print(rateoff)
+    if((errorrateB)>0):
+        accuracyb+=1
+    if((errorrateA)>0):
+        accuracyb+=1
+    if((errorrateB)<0):
+        accuracya+=1
+    if((errorrateA)<0):
+        accuracya+=1
+    if((errorrateB)==0 or (errorrateA)==0):
+        accuracy+=1
+rateon=round(abs(((accuracyb/68))*100))
+rateoff=round(abs(((accuracya/68))*100))
+ratei=100-(rateon+rateoff)
+print(rateon,"% of being positive")
+print(rateoff,"% of being negative")
+print(ratei,"% of being zero")
