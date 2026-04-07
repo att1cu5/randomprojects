@@ -173,6 +173,7 @@ def m(LR,IVA,IVB,WVA,WVB,WVC,WVD,HB):
     #print("state one: ",ProbA*100,"%","state two: ",ProbB*100,"%")
     return [ProbA*100,ProbB*100]
 accuracy=0
+accuracya=0
 for k in range(0,34):
     
     errorrateB=0
@@ -192,9 +193,11 @@ for k in range(0,34):
     if((errorrateB)>0 or (errorrateA)>0):
         accuracy+=(1)
     if((errorrateB)<0 or (errorrateA)<0):
-        accuracy+=(1)
-
+        accuracya+=(1)
+    
 print("percentage when errorrate is 0 equals:",round(abs((1-(accuracy/34))*100)),"%")
 print("percentage when errorrate is not 0 equals:",round(abs(((accuracy/34))*100)),"%")
 rateon=round(abs(((accuracy/34))*100))
-rateoff=round(abs((1-(accuracy/34))*100))
+rateoff=round(abs(((accuracya/34))*100))
+print(rateon)
+print(rateoff)
