@@ -192,5 +192,5 @@ for k in range(0,34):
     if(errorrateB<0 or errorrateA<0):
         accuracy+=1
 
-print("percentage when errorrate is 0 equals:",(1-(accuracy/34))*100,"%")
-print("percentage when errorrate is not 0 equals:",((accuracy/34))*100,"%")
+print("percentage when errorrate is 0 equals:",round(abs((1-(accuracy/34))*100)),"%")
+print("percentage when errorrate is not 0 equals:",round(abs(((accuracy/34))*100)),"%")
