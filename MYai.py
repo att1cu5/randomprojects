@@ -217,3 +217,17 @@ print(rateoff,"% of being negative, avg error rate:",avgnegativedisplacement/68)
 print(ratei,"% of being zero")
 xi=avgpositivedisplacement/68
 xf=avgnegativedisplacement/68
+xpa=rateon
+xpb=rateoff
+
+def correction(a,b,c,d):
+    import random 
+    ba=random.randint(0,100)
+    if(ba<c):
+        print("too low")
+    elif(ba+c>d-c):
+        print("too high")
+    else:
+        print("just right")
+for i in range(0,10):
+    correction(xi,xf,xpb,xpa)
