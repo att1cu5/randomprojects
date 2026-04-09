@@ -215,3 +215,5 @@ ratei=100-(rateon+rateoff)
 print(rateon,"% of being positive, avg error rate:",avgpositivedisplacement/68)
 print(rateoff,"% of being negative, avg error rate:",avgnegativedisplacement/68)
 print(ratei,"% of being zero")
+xi=avgpositivedisplacement/68
+xf=avgnegativedisplacement/68
