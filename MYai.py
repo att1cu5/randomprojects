@@ -261,10 +261,14 @@ def createM(arr,col,row):
     
     matrix = np.array(arr).reshape(col, row)
     return matrix
+def eval(JK):
+    import numpy as np
+    j,k=np.linalg.eig(JK)
+    return j,k
+
 Am=createM(h,17,2)@createM(h,2,17)
 Bm=createM(h,2,17)@createM(h,17,2)
-print("matrix one:",Am)
-print("rows :",len(Am), "cols :", len(Am[0]))
-print("matrix one:",Bm)
-print("rows :",len(Bm), "cols :", len(Bm[0]))
-   
+print(eval(Am))
+print(eval(Bm))
+
+
