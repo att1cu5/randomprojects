@@ -4,6 +4,8 @@ avgchangeinpercenttwo=0
 rateon=0
 rateoff=0
 ratei=0
+weightA=0
+weightB=0
 avgpositivedisplacement=0
 avgnegativedisplacement=0
 avg=[0]
@@ -271,7 +273,9 @@ def kronm(AG,KG):
     import numpy as np
     res=np.kron(AG,KG)
     return res
-
+def find_D(XCA
+    import numpy as np
+    return np.linalg.det(XCA)
 endMa=kronm(Am,Bm)@kronm(Bm,Am)
 endMb=kronm(Bm,Am)@kronm(Am,Bm)
 hadmard=endMa*endMb
@@ -296,7 +300,7 @@ phaseshiftB=phase(endMb,3)
 endhadmardA=hadmard(endMa,endMa)
 endhadmardB=hadmard(endMb,endMb)
 StatesA=state(klo)*phaseshiftA*endhadmardA*(1/math.sqrt(2))
-print(StatesA)
+print(StatesA*find_D(endMa))
 StatesB=state(klo)*phaseshiftB*endhadmardB*(1/math.sqrt(2))
-print(StatesB)
+print(StatesB*find_D(endMb))
 
