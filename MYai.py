@@ -288,11 +288,10 @@ def phase(ML,mk):
     import numpy as np
     phi=np.pi/mk
     return np.exp(1j*phi)*ML
-def initstate(LKO):
-    LKO=np
 phaseshiftA=phase(endMa,3)
 phaseshiftB=phase(endMb,3)
 endhadmardA=hadmard(endMa,endMa)
-endhadmardA=hadmard(endMb,endMb) 
+endhadmardB=hadmard(endMb,endMb)
+
 
 
