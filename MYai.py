@@ -230,20 +230,21 @@ for k in range(1,35):
         
         if(ui<=lo*100):
             x=low
-            print(x)
+            #print(x)
             
         if(ui<=(lo+po)*100 and ui>(lo*100) ):
             x=0
-            print(x)
+            #print(x)
 
         if(ui<=(lo+po+ikl)*100 and ui>(lo+po)*100 ):
             x=high
-            print(x)
+            
+            #print(x)
 
         return x
     avg[k]=hj(kl[0],kl[1],kl[2],xi,xf)
 del avg[0] 
-print(avg)
+#print(avg)
 def derive(E):
     import numpy as np
     dx=1
@@ -252,11 +253,18 @@ def derive(E):
     
     return dy
 h=derive(avg)
-print(h)
+#print(h)
 h=derive(h)
-print(h)
-du=0
-for i in range(0,len(h)-1):
-    du+=h[i]
-avgT=du/len(h)
-print(avgT)
+#print(h)
+def createM(arr,col,row):
+    import numpy as np
+    
+    matrix = np.array(arr).reshape(col, row)
+    return matrix
+Am=createM(h,17,2)@createM(h,2,17)
+Bm=createM(h,2,17)@createM(h,17,2)
+print("matrix one:",Am)
+print("rows :",len(Am), "cols :", len(Am[0]))
+print("matrix one:",Bm)
+print("rows :",len(Bm), "cols :", len(Bm[0]))
+   
