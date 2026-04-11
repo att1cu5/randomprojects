@@ -268,7 +268,13 @@ def eval(JK):
 
 Am=createM(h,17,2)@createM(h,2,17)
 Bm=createM(h,2,17)@createM(h,17,2)
-print(eval(Am))
-print(eval(Bm))
+def kronm(AG,KG):
+    import numpy as np
+    res=np.kron(AG,KG)
+    return res
+endMa=kronm(Am,Bm)@kronm(Bm,Am)
+endMb=kronm(Bm,Am)@kronm(Am,Bm)
+
+    
 
 
