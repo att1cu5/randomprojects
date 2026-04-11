@@ -308,5 +308,4 @@ StatesB=state(klo)*phaseshiftB*endhadmardB*(1/math.sqrt(2))
 Fb=StatesB*find_D(Bm)
 Fa=StatesA*find_D(Am)
 uio=Fb+Fa
-#print(eval(uio))
-print(transpose(eval(uio)[0]))
+print(transpose(eval(uio)[0])*state(klo))
