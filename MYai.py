@@ -273,7 +273,7 @@ def kronm(AG,KG):
     import numpy as np
     res=np.kron(AG,KG)
     return res
-def find_D(XCA
+def find_D(XCA):
     import numpy as np
     return np.linalg.det(XCA)
 endMa=kronm(Am,Bm)@kronm(Bm,Am)
@@ -300,7 +300,7 @@ phaseshiftB=phase(endMb,3)
 endhadmardA=hadmard(endMa,endMa)
 endhadmardB=hadmard(endMb,endMb)
 StatesA=state(klo)*phaseshiftA*endhadmardA*(1/math.sqrt(2))
-print(StatesA*find_D(endMa))
+print(StatesA*find_D(Am))
 StatesB=state(klo)*phaseshiftB*endhadmardB*(1/math.sqrt(2))
-print(StatesB*find_D(endMb))
+print(StatesB*find_D(Bm))
 
