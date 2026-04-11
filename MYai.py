@@ -272,9 +272,21 @@ def kronm(AG,KG):
     import numpy as np
     res=np.kron(AG,KG)
     return res
+
 endMa=kronm(Am,Bm)@kronm(Bm,Am)
 endMb=kronm(Bm,Am)@kronm(Am,Bm)
-
-    
+hadmard=endMa*endMb
+def hadmard(NM,LM):
+    import numpy as np
+    NOP=NM/np.abs(LM)
+    return NOP
+def phase(ML,mk):
+    import numpy as np
+    phi=np.pi/mk
+    return np.exp(1j*phi)*ML
+phaseshiftA=phase(endMa,3)
+phaseshiftB=phase(endMb,3)
+endhadmardA=hadmard(endMa,endMa)
+endhadmardA=hadmard(endMb,endMb) 
 
 
