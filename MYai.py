@@ -5,36 +5,11 @@ rateoff=0
 ratei=0
 avgpositivedisplacement=0
 avgnegativedisplacement=0
+avg=[0]
+for i in range(1,35):
+    avg[i]=avg.insert(i,0)
 
 
-def r(h,l,o,n):
-    
-    y=len(str(h))-1
-    io=len(str(l))-1
-    op=len(str(o))-1
-    if(op<io and op<y):
-        print("sig digs:",end=" ")
-        print(op)
-        return(op)
-    if(op>io and io<y):
-        print("sig digs:",end=" ")
-        print(io)
-        return(io)
-    if(op>y and io>y):
-        print("sig digs:",end=" ")
-        print(y)
-        return(y)
-    if(op==y==io):
-        print("sig digs:",end=" ")
-        print(int((y+op+io)/n))
-        return int((y+op+io)/n)
-    r(kl[0],kl[1],kl[2])
-    if(round(kl[0])+round(kl[2])+round(kl[1])==n):
-        for i in range(0,3):
-         kl[i]=round(kl[i])
-        print(kl)
-        so=xi*n*2
-        do=xf*n*2
     
 
 def m(LR,IVA,IVB,WVA,WVB,WVC,WVD,HB):
@@ -247,21 +222,26 @@ for k in range(1,35):
     xf=avgnegativedisplacement/k
     kl=[abs(round((rateoff/100)*k)),abs(round((ratei/100)*k)),abs(round((rateon/100)*k))]
     #print(kl)
-    timesa=0
+    
     def hj(lo,po,ikl,low,high):
         import random
-        ui=random.randint(0,3400)
-        print(ui)
-        x=0
-        print(lo)
-        print(po)
-        print(ikl)
+        ui=random.randint(0,(lo+po+ikl)*100)
+        
+        
         if(ui<=lo*100):
-            print("k")
-        if(ui<=(lo+po)*100 and ui>(lo*100)):
-            print("o")
-        if(ui<=(lo+po+ikl)*100 and ui>(lo+po)*100):
-            print("P")
+            x=low
+            print(x)
+            
+        if(ui<=(lo+po)*100 and ui>(lo*100) ):
+            x=0
+            print(x)
+
+        if(ui<=(lo+po+ikl)*100 and ui>(lo+po)*100 ):
+            x=high
+            print(x)
+
         return x
-hj(kl[0],kl[1],kl[2],xi,xf)
-    
+    avg[k]=hj(kl[0],kl[1],kl[2],xi,xf)
+del avg[0] 
+print(avg)
+
