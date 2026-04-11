@@ -1,3 +1,4 @@
+import math
 avgchangeinpercentone=0
 avgchangeinpercenttwo=0
 rateon=0
@@ -9,12 +10,6 @@ avg=[0]
 klo=[0]
 for i in range(1,35):
     avg[i]=avg.insert(i,0)
-
-for i in range(1,35):
-    if(i%2==0):
-        klo[i]=klo.insert(0,0)
-    else:
-        klo[i]=klo.insert(1,0)
 
 def m(LR,IVA,IVB,WVA,WVB,WVC,WVD,HB):
     import math
@@ -284,6 +279,14 @@ def hadmard(NM,LM):
     import numpy as np
     NOP=NM/np.abs(LM)
     return NOP
+def state(lo):
+    import numpy as np
+    ol=np.zeros((1,34),dtype=int)
+    ol[0, ::2] = 1e-50 # Every second element starting at index 0
+    ol[0, 1::2] = 1
+    return ol
+    
+   
 def phase(ML,mk):
     import numpy as np
     phi=np.pi/mk
@@ -292,6 +295,6 @@ phaseshiftA=phase(endMa,3)
 phaseshiftB=phase(endMb,3)
 endhadmardA=hadmard(endMa,endMa)
 endhadmardB=hadmard(endMb,endMb)
-#hi
-
+StatesA=state(klo)*phaseshiftA*endhadmardA
+StatesB=state(klo)*phaseshiftB*endhadmardB
 
