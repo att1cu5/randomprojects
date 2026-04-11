@@ -6,11 +6,15 @@ ratei=0
 avgpositivedisplacement=0
 avgnegativedisplacement=0
 avg=[0]
+klo=[0]
 for i in range(1,35):
     avg[i]=avg.insert(i,0)
 
-
-    
+for i in range(1,35):
+    if(i%2==0):
+        klo[i]=klo.insert(0,0)
+    else:
+        klo[i]=klo.insert(1,0)
 
 def m(LR,IVA,IVB,WVA,WVB,WVC,WVD,HB):
     import math
@@ -284,9 +288,11 @@ def phase(ML,mk):
     import numpy as np
     phi=np.pi/mk
     return np.exp(1j*phi)*ML
+def initstate(LKO):
+    LKO=np
 phaseshiftA=phase(endMa,3)
 phaseshiftB=phase(endMb,3)
 endhadmardA=hadmard(endMa,endMa)
 endhadmardA=hadmard(endMb,endMb) 
-#hi
+
 
