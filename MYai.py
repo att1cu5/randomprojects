@@ -217,3 +217,4 @@ print(rateoff,"% of being negative, avg error rate:",avgnegativedisplacement/68)
 print(ratei,"% of being zero")
 xi=avgpositivedisplacement/68
 xf=avgnegativedisplacement/68
+def calculate(a,b,c,d,g)
