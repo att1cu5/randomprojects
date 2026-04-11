@@ -245,5 +245,6 @@ for k in range(1,35):
     
     xi=avgpositivedisplacement/k
     xf=avgnegativedisplacement/k
-    kl=[(rateoff/100)*k,(ratei/100)*k,(rateon/100)*k]
+    kl=[abs(round((rateoff/100)*k)),abs(round((ratei/100)*k)),abs(round((rateon/100)*k))]
     print(kl)
+    
