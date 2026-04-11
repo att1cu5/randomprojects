@@ -246,5 +246,12 @@ for k in range(1,35):
     xi=avgpositivedisplacement/k
     xf=avgnegativedisplacement/k
     kl=[abs(round((rateoff/100)*k)),abs(round((ratei/100)*k)),abs(round((rateon/100)*k))]
-    print(kl)
-    
+    #print(kl)
+    def hj(lo,po,ikl,low,high):
+        x=0
+        for i in range(0,lo):
+            x+=high
+        for i in range(0,ikl):
+            x+=low
+        return x
+    print(hj(kl[0],kl[1],kl[2],xf,xi))
