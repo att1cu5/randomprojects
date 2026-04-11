@@ -295,6 +295,7 @@ phaseshiftA=phase(endMa,3)
 phaseshiftB=phase(endMb,3)
 endhadmardA=hadmard(endMa,endMa)
 endhadmardB=hadmard(endMb,endMb)
-StatesA=state(klo)*phaseshiftA*endhadmardA
+StatesA=state(klo)*phaseshiftA*endhadmardA*(1/math.sqrt(2))
+print(StatesA)
 StatesB=state(klo)*phaseshiftB*endhadmardB
 
