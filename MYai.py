@@ -5,6 +5,38 @@ rateoff=0
 ratei=0
 avgpositivedisplacement=0
 avgnegativedisplacement=0
+
+
+def r(h,l,o,n):
+    
+    y=len(str(h))-1
+    io=len(str(l))-1
+    op=len(str(o))-1
+    if(op<io and op<y):
+        print("sig digs:",end=" ")
+        print(op)
+        return(op)
+    if(op>io and io<y):
+        print("sig digs:",end=" ")
+        print(io)
+        return(io)
+    if(op>y and io>y):
+        print("sig digs:",end=" ")
+        print(y)
+        return(y)
+    if(op==y==io):
+        print("sig digs:",end=" ")
+        print(int((y+op+io)/n))
+        return int((y+op+io)/n)
+    r(kl[0],kl[1],kl[2])
+    if(round(kl[0])+round(kl[2])+round(kl[1])==n):
+        for i in range(0,3):
+         kl[i]=round(kl[i])
+        print(kl)
+        so=xi*n*2
+        do=xf*n*2
+    
+
 def m(LR,IVA,IVB,WVA,WVB,WVC,WVD,HB):
     import math
     import re
@@ -178,22 +210,20 @@ def m(LR,IVA,IVB,WVA,WVB,WVC,WVD,HB):
 accuracy=0
 accuracya=0
 accuracyb=0
-for k in range(0,34):
+for k in range(1,35):
     
     errorrateB=0
     errorrateA=0
-    for i in range(0,34):
+    for i in range(1,35):
         x=m(0.2,0.4,0.23,0.45,0.34,0.67,9,7)
         avgchangeinpercentone=x[0]
         avgchangeinpercenttwo=x[1]
         x=m(0.2,0.4,0.23,0.45,0.34,0.67,9,7)
         avgchangeinpercentone=x[0]-avgchangeinpercentone
         avgchangeinpercenttwo=x[1]-avgchangeinpercenttwo
-    errorrateB=(avgchangeinpercentone/34)
-    errorrateA=(avgchangeinpercenttwo/34)
-    print("Test number",k,":")
-    print("average error rate for B:",errorrateB)
-    print("average error rate for A:",errorrateA)
+    errorrateB=(avgchangeinpercentone/k)
+    errorrateA=(avgchangeinpercenttwo/k)
+
     if((errorrateB)>0):
         accuracyb+=1
         avgpositivedisplacement+=errorrateB
@@ -209,41 +239,11 @@ for k in range(0,34):
         avgnegativedisplacement+=errorrateA
     if((errorrateB)==0 or (errorrateA)==0):
         accuracy+=1
-rateon=round(abs(((accuracyb/68))*100))
-rateoff=round(abs(((accuracya/68))*100))
-ratei=100-(rateon+rateoff)
-print(rateon,"% of being positive, avg error rate:",avgpositivedisplacement/68)
-print(rateoff,"% of being negative, avg error rate:",avgnegativedisplacement/68)
-print(ratei,"% of being zero")
-xi=avgpositivedisplacement/68
-xf=avgnegativedisplacement/68
-def m(a,b):
-    return a*b
-kl=[(rateoff/100)*34,(ratei/100)*34,(rateon/100)*34]
-print(kl)
-def r(h,l,o):
+    rateon=round(abs(((accuracyb/k))*100))
+    rateoff=round(abs(((accuracya/k))*100))
+    ratei=100-(rateon+rateoff)
     
-    y=len(str(h))-1
-    io=len(str(l))-1
-    op=len(str(o))-1
-    if(op<io and op<y):
-        print("sig digs:",end=" ")
-        print(op)
-        return(op)
-    if(op>io and io<y):
-        print("sig digs:",end=" ")
-        print(io)
-        return(io)
-    if(op>y and io>y):
-        print("sig digs:",end=" ")
-        print(y)
-        return(y)
-    if(op==y==io):
-        print("sig digs:",end=" ")
-        print(int((y+op+io)/3))
-        return int((y+op+io)/3)
-r(kl[0],kl[1],kl[2])
-if(round(kl[0])+round(kl[2])+round(kl[1])==34):
-    for i in range(0,3):
-     kl[i]=round(kl[i])
+    xi=avgpositivedisplacement/k
+    xf=avgnegativedisplacement/k
+    kl=[(rateoff/100)*k,(ratei/100)*k,(rateon/100)*k]
     print(kl)
