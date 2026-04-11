@@ -281,7 +281,7 @@ endMb=kronm(Bm,Am)@kronm(Am,Bm)
 hadmard=endMa*endMb
 def hadmard(NM,LM):
     import numpy as np
-    NOP=NM/np.abs(LM)
+    NOP=NM/np.abs(LM+1)
     return NOP
 def state(lo):
     import numpy as np
@@ -295,6 +295,9 @@ def phase(ML,mk):
     import numpy as np
     phi=np.pi/mk
     return np.exp(1j*phi)*ML
+def transpose(AKL):
+    import numpy as np
+    return AKL.conj().T
 phaseshiftA=phase(endMa,3)
 phaseshiftB=phase(endMb,3)
 endhadmardA=hadmard(endMa,endMa)
@@ -304,4 +307,6 @@ StatesA=state(klo)*phaseshiftA*endhadmardA*(1/math.sqrt(2))
 StatesB=state(klo)*phaseshiftB*endhadmardB*(1/math.sqrt(2))
 Fb=StatesB*find_D(Bm)
 Fa=StatesA*find_D(Am)
-print(Fb+Fa)
+uio=Fb+Fa
+#print(eval(uio))
+print(transpose(eval(uio)[0]))
