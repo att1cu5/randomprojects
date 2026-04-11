@@ -297,5 +297,6 @@ endhadmardA=hadmard(endMa,endMa)
 endhadmardB=hadmard(endMb,endMb)
 StatesA=state(klo)*phaseshiftA*endhadmardA*(1/math.sqrt(2))
 print(StatesA)
-StatesB=state(klo)*phaseshiftB*endhadmardB
+StatesB=state(klo)*phaseshiftB*endhadmardB*(1/math.sqrt(2))
+print(StatesB)
 
