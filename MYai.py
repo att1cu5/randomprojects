@@ -222,23 +222,28 @@ def m(a,b):
 kl=[(rateoff/100)*34,(ratei/100)*34,(rateon/100)*34]
 print(kl)
 def r(h,l,o):
+    
     y=len(str(h))-1
     io=len(str(l))-1
     op=len(str(o))-1
     if(op<io and op<y):
+        print("sig digs:",end=" ")
         print(op)
         return(op)
     if(op>io and io<y):
+        print("sig digs:",end=" ")
         print(io)
         return(io)
     if(op>y and io>y):
+        print("sig digs:",end=" ")
         print(y)
         return(y)
     if(op==y==io):
+        print("sig digs:",end=" ")
         print(int((y+op+io)/3))
         return int((y+op+io)/3)
 r(kl[0],kl[1],kl[2])
 if(round(kl[0])+round(kl[2])+round(kl[1])==34):
     for i in range(0,3):
      kl[i]=round(kl[i])
-print(kl)
+    print(kl)
