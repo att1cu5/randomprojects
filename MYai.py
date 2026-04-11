@@ -304,4 +304,4 @@ StatesA=state(klo)*phaseshiftA*endhadmardA*(1/math.sqrt(2))
 StatesB=state(klo)*phaseshiftB*endhadmardB*(1/math.sqrt(2))
 Fb=StatesB*find_D(Bm)
 Fa=StatesA*find_D(Am)
-
+print(Fb+Fa)
