@@ -300,7 +300,8 @@ phaseshiftB=phase(endMb,3)
 endhadmardA=hadmard(endMa,endMa)
 endhadmardB=hadmard(endMb,endMb)
 StatesA=state(klo)*phaseshiftA*endhadmardA*(1/math.sqrt(2))
-print(StatesA*find_D(Am))
+
 StatesB=state(klo)*phaseshiftB*endhadmardB*(1/math.sqrt(2))
-print(StatesB*find_D(Bm))
+Fb=StatesB*find_D(Bm)
+Fa=StatesA*find_D(Am)
 
