@@ -292,6 +292,6 @@ phaseshiftA=phase(endMa,3)
 phaseshiftB=phase(endMb,3)
 endhadmardA=hadmard(endMa,endMa)
 endhadmardB=hadmard(endMb,endMb)
-
+#hi
 
 
