@@ -247,11 +247,21 @@ for k in range(1,35):
     xf=avgnegativedisplacement/k
     kl=[abs(round((rateoff/100)*k)),abs(round((ratei/100)*k)),abs(round((rateon/100)*k))]
     #print(kl)
+    timesa=0
     def hj(lo,po,ikl,low,high):
+        import random
+        ui=random.randint(0,3400)
+        print(ui)
         x=0
-        for i in range(0,lo):
-            x+=high
-        for i in range(0,ikl):
-            x+=low
+        print(lo)
+        print(po)
+        print(ikl)
+        if(ui<=lo*100):
+            print("k")
+        if(ui<=(lo+po)*100 and ui>(lo*100)):
+            print("o")
+        if(ui<=(lo+po+ikl)*100 and ui>(lo+po)*100):
+            print("P")
         return x
-    print(hj(kl[0],kl[1],kl[2],xf,xi))
+hj(kl[0],kl[1],kl[2],xi,xf)
+    
