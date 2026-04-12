@@ -344,7 +344,7 @@ for ik in range(0,len(Uans[0])):
 
 AnsA=int(abs(AvgA.imag/AvgA.real)*math.pow(10,15))*int(abs(AvgA.real/AvgA.imag)*math.pow(10,15))
 
-print(AnsA)
+print(AnsA-999999999999900000000000000000)
 
 
 
