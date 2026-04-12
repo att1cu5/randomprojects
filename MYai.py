@@ -328,24 +328,8 @@ for i in range(0,len(endF[0])):
     SUMA+=complex(endF[0,i].real,endF[0,i].imag)
 
 end = time.perf_counter()
-time.sleep(random.random()+0.1)
+
 t=end - start
 hiuo=(6.2607015*math.pow(10,-34))/(2*math.pi)
 Uans=SUMA*math.e**(complex(0,-1)*(t/hiuo))*endF
-AvgA=0
-for i in range(0,len(Uans[0])):
-    AvgA+=complex(Uans[-1,i].real,Uans[-1,i].imag)
-for ik in range(0,len(Uans[0])):
-    AvgA+=complex(Uans[0,i].real,Uans[0,i].imag)
-#print(Uans)
-
-#print(UansA)
-#print(Uans)
-
-AnsA=int(abs(AvgA.imag/AvgA.real)*math.pow(10,15))*int(abs(AvgA.real/AvgA.imag)*math.pow(10,15))
-
-print(AnsA-999999999999900000000000000000)
-
-
-
-
+print(Uans)
