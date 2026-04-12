@@ -338,11 +338,10 @@ for i in range(0,len(Uans[0])):
 for i in range(0,len(Uans[0])):
     AvgA+=complex(Uans[0,i].real,Uans[0,i].imag)
 #print(Uans)
-print(t)
-#print(UansA)
-print(Uans)
-print(AvgA)
 
+#print(UansA)
+#print(Uans)
+print(abs(AvgA.imag/AvgA.real),abs(AvgA.real/AvgA.imag))
 
 
 
