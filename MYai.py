@@ -2,6 +2,7 @@ import math
 avgchangeinpercentone=0
 avgchangeinpercenttwo=0
 rateon=0
+P=0
 rateoff=0
 ratei=0
 weightA=0
@@ -246,16 +247,16 @@ for k in range(1,35):
     avg[k]=hj(kl[0],kl[1],kl[2],xi,xf)
 del avg[0] 
 #print(avg)
-def derive(E):
+def derive(E,s):
     import numpy as np
-    dx=1
+    dx=s
     dy=np.gradient(E, dx)
 
     
     return dy
-h=derive(avg)
+h=derive(avg,1)
 #print(h)
-h=derive(h)
+h=derive(h,1)
 #print(h)
 def createM(arr,col,row):
     import numpy as np
@@ -303,9 +304,25 @@ phaseshiftB=phase(endMb,3)
 endhadmardA=hadmard(endMa,endMa)
 endhadmardB=hadmard(endMb,endMb)
 StatesA=state(klo)*phaseshiftA*endhadmardA*(1/math.sqrt(2))
+po=float(6.2607015*math.pow(10,-34)/(2*math.pi))*-1j
+po=po.imag
+xcv=po/float(6.2607015*math.pow(10,-34)/(2*math.pi))
+xd=1
 
 StatesB=state(klo)*phaseshiftB*endhadmardB*(1/math.sqrt(2))
 Fb=StatesB*find_D(Bm)
 Fa=StatesA*find_D(Am)
 uio=Fb+Fa
+
+cfs=math.e**(-1j*xd)
+print(cfs)
+#print(eval(uio))
+
 print(transpose(eval(uio)[0])*state(klo))
+
+
+
+
+
+
+
