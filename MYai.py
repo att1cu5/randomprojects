@@ -1,4 +1,7 @@
 import math
+import time
+start = time.perf_counter()
+
 avgchangeinpercentone=0
 avgchangeinpercenttwo=0
 rateon=0
@@ -304,9 +307,9 @@ phaseshiftB=phase(endMb,3)
 endhadmardA=hadmard(endMa,endMa)
 endhadmardB=hadmard(endMb,endMb)
 StatesA=state(klo)*phaseshiftA*endhadmardA*(1/math.sqrt(2))
-po=float(6.2607015*math.pow(10,-34)/(2*math.pi))*-1j
+po=float((6.2607015*math.pow(10,-34))/(2*math.pi))*-1j
 po=po.imag
-xcv=po/float(6.2607015*math.pow(10,-34)/(2*math.pi))
+xcv=po/float((6.2607015*math.pow(10,-34))/(2*math.pi))
 
 
 StatesB=state(klo)*phaseshiftB*endhadmardB*(1/math.sqrt(2))
@@ -317,12 +320,20 @@ uio=Fb+Fa
 SUMA=0
 #print(eval(uio))
 endF=transpose(eval(uio)[0])*state(klo)
-print(endF)
+#print(endF)
 for i in range(0,len(endF[0])):
     SUMA+=complex(endF[-1,i].real,endF[-1,i].imag)
 for i in range(0,len(endF[0])):
     SUMA+=complex(endF[0,i].real,endF[0,i].imag)
-print(SUMA)
+
+end = time.perf_counter()
+t=end - start
+hiuo=(6.2607015*math.pow(10,-34))/(2*math.pi)
+Uans=SUMA*math.e**(complex(0,-1)*(t/hiuo))*endF
+print(Uans)
+
+
+
 
 
 
