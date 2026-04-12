@@ -1,5 +1,6 @@
 import math
 import time
+import random
 start = time.perf_counter()
 
 avgchangeinpercentone=0
@@ -327,12 +328,20 @@ for i in range(0,len(endF[0])):
     SUMA+=complex(endF[0,i].real,endF[0,i].imag)
 
 end = time.perf_counter()
+time.sleep(random.random())
 t=end - start
 hiuo=(6.2607015*math.pow(10,-34))/(2*math.pi)
 Uans=SUMA*math.e**(complex(0,-1)*(t/hiuo))*endF
+AvgA=0
+for i in range(0,len(Uans[0])):
+    AvgA+=complex(Uans[-1,i].real,Uans[-1,i].imag)
+for i in range(0,len(Uans[0])):
+    AvgA+=complex(Uans[0,i].real,Uans[0,i].imag)
+#print(Uans)
+print(t)
+#print(UansA)
 print(Uans)
-
-
+print(AvgA)
 
 
 
