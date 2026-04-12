@@ -1,3 +1,5 @@
+import time
+start_time = time.perf_counter()
 import math
 avgchangeinpercentone=0
 avgchangeinpercenttwo=0
@@ -317,13 +319,26 @@ uio=Fb+Fa
 SUMA=0
 #print(eval(uio))
 endF=transpose(eval(uio)[0])*state(klo)
-print(endF)
+#print(endF)
 for i in range(0,len(endF[0])):
     SUMA+=complex(endF[-1,i].real,endF[-1,i].imag)
 for i in range(0,len(endF[0])):
     SUMA+=complex(endF[0,i].real,endF[0,i].imag)
-print(SUMA)
+#print(SUMA)
+def getEn(Hil):
+    import numpy as np
+    import math
+    return math.pow(np.abs(Hil),2)
+hjkol=6.2607015*math.pow(10,-34)/(2*math.pi)
 
+
+
+# Your code here
+ 
+end_time = time.perf_counter()
+t=end_time - start_time
+Uans=SUMA*math.e**(complex(0,-1)*(getEn(SUMA)))*t/hjkol*endF
+print(Uans)
 
 
 
