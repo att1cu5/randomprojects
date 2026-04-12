@@ -307,22 +307,19 @@ StatesA=state(klo)*phaseshiftA*endhadmardA*(1/math.sqrt(2))
 po=float(6.2607015*math.pow(10,-34)/(2*math.pi))*-1j
 po=po.imag
 xcv=po/float(6.2607015*math.pow(10,-34)/(2*math.pi))
-xd=1
+
 
 StatesB=state(klo)*phaseshiftB*endhadmardB*(1/math.sqrt(2))
 Fb=StatesB*find_D(Bm)
 Fa=StatesA*find_D(Am)
 uio=Fb+Fa
 
-cfs=math.e**(-1j*xd)
-print(cfs)
+SUMA=0
 #print(eval(uio))
-
-print(transpose(eval(uio)[0])*state(klo))
-
-
-
-
-
-
-
+endF=transpose(eval(uio)[0])*state(klo)
+print(endF)
+for i in range(0,len(endF[0])):
+    SUMA+=complex(endF[-1,i].real,endF[-1,i].imag)
+for i in range(0,len(endF[0])):
+    SUMA+=complex(endF[0,i].real,endF[0,i].imag)
+print(SUMA)
