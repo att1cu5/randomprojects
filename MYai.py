@@ -323,3 +323,8 @@ for i in range(0,len(endF[0])):
 for i in range(0,len(endF[0])):
     SUMA+=complex(endF[0,i].real,endF[0,i].imag)
 print(SUMA)
+
+
+
+
+
