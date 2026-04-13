@@ -369,6 +369,9 @@ MAD=CombinedMAE@CombinedME
 #print("combined C and D:")
 #print(kronm(MAC,MAD)-33)
 CombinedB=kronm(MAC,MAD)-33
-print("all matrices combined: ")
+print("all matrices combined A: ")
 print(CombinedA*CombinedB)
 FinalM=CombinedA*CombinedB
+FinalMA=CombinedB*CombinedA
+print("all matrices combined B: ")
+print(CombinedB*CombinedA)
