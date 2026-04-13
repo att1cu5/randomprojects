@@ -358,8 +358,8 @@ MAA=CombinedM@CombinedMA
 #print(CombinedMA@CombinedM)
 MAB=CombinedMA@CombinedM
 print("combined A and B:")
-print(kronm(MAA,MAB))
-CombinedA=kronm(MAA,MAB)
+print(kronm(MAA,MAB)-34)
+CombinedA=kronm(MAA,MAB)-34
 #print("fully combined Matrix C and D one:")
 #print(CombinedME@CombinedMAE)
 MAC=CombinedME@CombinedMAE
@@ -367,5 +367,5 @@ MAC=CombinedME@CombinedMAE
 #print(CombinedMAE@CombinedME)
 MAD=CombinedMAE@CombinedME
 print("combined C and D:")
-print(kronm(MAC,MAD))
-CombinedB=kronm(MAC,MAD)
+print(kronm(MAC,MAD)-34)
+CombinedB=kronm(MAC,MAD)-34
