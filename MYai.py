@@ -333,5 +333,33 @@ t=end - start
 tA=endA-Astart
 hiuo=(6.2607015*math.pow(10,-34))/(2*math.pi)
 Uans=SUMA*math.e**(complex(0,-1)*(t/hiuo))*endF
+UansB=SUMA*math.e**(complex(0,-1)*(tA/hiuo))*endF
 print(t,"seconds", tA, "seconds")
-print("errorrate:")
+print("Output A:")
+print(Uans)
+print("Output B:")
+print(UansB)
+CombinedM=createM(UansB,2,17)**createM(Uans,2,17)
+CombinedMA=createM(UansB,17,2)**createM(Uans,17,2)
+CombinedME=createM(UansB,1,34)**createM(Uans,1,34)
+CombinedMAE=createM(UansB,34,1)**createM(Uans,34,1)
+print("Combined Matrix A:")
+print(CombinedM)
+print("Combined Matrix B:")
+print(CombinedMA)
+print("Combined Matrix C:")
+print(CombinedME)
+print("Combined Matrix D:")
+print(CombinedMAE)
+print("fully combined Matrix A and B one:")
+print(CombinedM@CombinedMA)
+MAA=CombinedM@CombinedMA
+print("fully combined Matrix A and B two:")
+print(CombinedMA@CombinedM)
+MAB=CombinedMA@CombinedM
+print("fully combined Matrix C and D one:")
+print(CombinedME@CombinedMAE)
+MAC=CombinedME@CombinedMAE
+print("fully combined Matrix D and C two:")
+print(CombinedMAE@CombinedME)
+MAD=CombinedMAE@CombinedME
