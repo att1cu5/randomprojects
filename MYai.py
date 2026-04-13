@@ -1,8 +1,8 @@
 import math
 import time
-import random
+#import random
 start = time.perf_counter()
-
+Astart = time.process_time()
 avgchangeinpercentone=0
 avgchangeinpercenttwo=0
 rateon=0
@@ -328,9 +328,10 @@ for i in range(0,len(endF[0])):
     SUMA+=complex(endF[0,i].real,endF[0,i].imag)
 
 end = time.perf_counter()
-
+endA= time.process_time()
 t=end - start
+tA=endA-Astart
 hiuo=(6.2607015*math.pow(10,-34))/(2*math.pi)
 Uans=SUMA*math.e**(complex(0,-1)*(t/hiuo))*endF
-print(t,"seconds")
-print(Uans)
+print(t,"seconds", tA, "seconds")
+print("errorrate:")
