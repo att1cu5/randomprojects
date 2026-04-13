@@ -371,3 +371,4 @@ print(kronm(MAC,MAD)-33)
 CombinedB=kronm(MAC,MAD)-33
 print("all matrices combined: ")
 print(CombinedA*CombinedB)
+FinalM=CombinedA*CombinedB
