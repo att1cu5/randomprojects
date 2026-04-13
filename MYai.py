@@ -357,8 +357,8 @@ MAA=CombinedM@CombinedMA
 #print("fully combined Matrix A and B two:")
 #print(CombinedMA@CombinedM)
 MAB=CombinedMA@CombinedM
-print("combined A and B:")
-print(kronm(MAA,MAB)-33)
+#print("combined A and B:")
+#print(kronm(MAA,MAB)-33)
 CombinedA=kronm(MAA,MAB)-33
 #print("fully combined Matrix C and D one:")
 #print(CombinedME@CombinedMAE)
@@ -366,8 +366,8 @@ MAC=CombinedME@CombinedMAE
 #print("fully combined Matrix D and C two:")
 #print(CombinedMAE@CombinedME)
 MAD=CombinedMAE@CombinedME
-print("combined C and D:")
-print(kronm(MAC,MAD)-33)
+#print("combined C and D:")
+#print(kronm(MAC,MAD)-33)
 CombinedB=kronm(MAC,MAD)-33
 print("all matrices combined: ")
 print(CombinedA*CombinedB)
