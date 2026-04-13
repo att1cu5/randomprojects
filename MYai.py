@@ -332,4 +332,5 @@ end = time.perf_counter()
 t=end - start
 hiuo=(6.2607015*math.pow(10,-34))/(2*math.pi)
 Uans=SUMA*math.e**(complex(0,-1)*(t/hiuo))*endF
+print(t,"seconds")
 print(Uans)
