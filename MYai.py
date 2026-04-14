@@ -375,4 +375,6 @@ FinalM=CombinedA*CombinedB
 FinalMA=CombinedB*CombinedA
 print("all matrices combined B: ")
 print(CombinedB*CombinedA)
+print("all matrices combined: ")
+print(FinalM*FinalMA)
 
