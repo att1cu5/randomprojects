@@ -17,6 +17,8 @@ avg=[0]
 klo=[0]
 for i in range(1,35):
     avg[i]=avg.insert(i,0)
+def O(re,ty,ui,ok,O):
+    return re*(O**ty)+(ui*O)+ok
 
 def m(LR,IVA,IVB,WVA,WVB,WVC,WVD,HB):
     import math
@@ -343,6 +345,7 @@ CombinedM=createM(UansB,2,17)**createM(Uans,2,17)
 CombinedMA=createM(UansB,17,2)**createM(Uans,17,2)
 CombinedME=createM(UansB,1,34)**createM(Uans,1,34)
 CombinedMAE=createM(UansB,34,1)**createM(Uans,34,1)
+
 #print("Combined Matrix A:")
 #print(CombinedM)
 #print("Combined Matrix B:")
@@ -378,4 +381,8 @@ FinalMA=CombinedB*CombinedA
 FinalMB=FinalM*FinalMA
 print("all matrices combined: ")
 print(FinalMB)
+for i in range(-16,16):
+    if(O(1,2,1,1,i)<16 and O(1,2,1,1,i)>-16):
+        print(O(1,2,1,1,i),",",i)
 
+        
