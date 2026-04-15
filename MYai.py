@@ -387,9 +387,12 @@ FinalMA=CombinedB*CombinedA
 FinalMB=FinalM*FinalMA
 print("all matrices combined: ")
 print(FinalMB)
-for i in range(-16,16):
-    if(O(1,2,1,1,i)!=0):
+for i in range(-16,17):
+    if(O(1,2,1,1,i)!=0 and O(1,2,1,1,i)<16 and O(1,2,1,1,i)>-16):
         K[i]=O(1,2,1,1,i)+17
         klo[i]=i+17
-
+    else:
+        K[i]=0
+        klo[i]=0
+print(K,klo)
         
