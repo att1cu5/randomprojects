@@ -15,6 +15,12 @@ avgpositivedisplacement=0
 avgnegativedisplacement=0
 avg=[0]
 klo=[0]
+K=[0]
+for i in range(1,33):
+    klo[i]=klo.insert(i,0)
+for i in range(1,33):
+    K[i]=K.insert(i,0)
+
 for i in range(1,35):
     avg[i]=avg.insert(i,0)
 def O(re,ty,ui,ok,O):
@@ -382,7 +388,8 @@ FinalMB=FinalM*FinalMA
 print("all matrices combined: ")
 print(FinalMB)
 for i in range(-16,16):
-    if(O(1,2,1,1,i)<16 and O(1,2,1,1,i)>-16):
-        print(O(1,2,1,1,i),",",i)
+    if(O(1,2,1,1,i)!=0):
+        K[i]=O(1,2,1,1,i)+17
+        klo[i]=i+17
 
         
