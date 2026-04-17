@@ -1,5 +1,9 @@
 Biasofdown=0   
 Biasofup=0
+LOP=0
+cv=0
+cvA=0
+cvB=0
 Biasofnothing=0
 for i in range(0,10):  
     spinDOWN=0
@@ -452,37 +456,50 @@ for i in range(0,10):
         for i in range(1,33):
           G+=FinalMB[K[i]][klo[i]]
         #print("Values: ",G-G.real)
+        
         if(G.imag>0):
             spinUP+=1
+            G=complex(G.real*G.imag,G.imag)
+            LOP=complex(G.real,G.imag)
+            print(LOP)
             DATA[ikol]=1
         if(G.imag<0):
             spinDOWN+=1
+            G=complex(G.real*G.imag,G.imag)
+            LOP=complex(G.real,G.imag)
+            print(LOP)
             DATA[ikol]=-1
         if(G.imag==0):
             nothing+=1
+            LOP=0
+            print(LOP)
             DATA[ikol]=0
+   
     #print("amount of times spinUP: ", spinUP)
     #print("amount of times spinDOWN: ", spinDOWN)
     #print("amount of times Nothing: ", nothing)
     #print(DATA)
     if(sum(DATA)>0):
-         print(complex(1j**i**(i/10)).real)
+         #print((LOP*DATA[0])+(LOP*DATA[1]))
          #print("data is trending positive")
          #print("probality of positive spin:",round((spinUP/(spinUP+spinDOWN+nothing)*100)),"%")
          #print("probality of negative spin:",round((spinDOWN/(spinUP+spinDOWN+nothing)*100)),"%")
          #print("probality of no spin:",round((nothing/(spinUP+spinDOWN+nothing)*100)),"%")
+         cvB+=1
     if(sum(DATA)<0):
-         print(complex(1j**i).real/i)
+         #print((LOP*DATA[0])+(LOP*DATA[1]))
          #print("data is trending negative")
          #print("probality of positive spin:",round((spinUP/(spinUP+spinDOWN+nothing)*100)),"%")
          #print("probality of negative spin:",round((spinDOWN/(spinUP+spinDOWN+nothing)*100)),"%")
          #print("probality of no spin:",round((nothing/(spinUP+spinDOWN+nothing)*100)),"%")
+         cvA+=1
     if(sum(DATA)==0):
-         print(0)
+         #print(0)
          #print("data is not biased")
          #print("probality of positive spin:",round((spinUP/(spinUP+spinDOWN+nothing)*100)),"%")
          #print("probality of negative spin:",round((spinDOWN/(spinUP+spinDOWN+nothing)*100)),"%")
          #print("probality of no spin:",round((nothing/(spinUP+spinDOWN+nothing)*100)),"%")
+         cv+=1
     Biasofdown+=round((spinDOWN/(spinUP+spinDOWN+nothing)*100))
     Biasofup+=round((spinUP/(spinUP+spinDOWN+nothing)*100))
     Biasofnothing+=round((nothing/(spinUP+spinDOWN+nothing)*100))
