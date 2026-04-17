@@ -1,5 +1,6 @@
-    
-    
+Biasofdown=0   
+Biasofup=0
+Biasofnothing=0
 for i in range(0,9):  
     spinDOWN=0
     spinUP=0
@@ -466,14 +467,27 @@ for i in range(0,9):
     print(DATA)
     if(sum(DATA)>0):
          print("data is trending positive")
+         print("probality of positive spin:",round((spinUP/(spinUP+spinDOWN+nothing)*100)),"%")
+         print("probality of negative spin:",round((spinDOWN/(spinUP+spinDOWN+nothing)*100)),"%")
+         print("probality of no spin:",round((nothing/(spinUP+spinDOWN+nothing)*100)),"%")
     if(sum(DATA)<0):
          print("data is trending negative")
+         print("probality of positive spin:",round((spinUP/(spinUP+spinDOWN+nothing)*100)),"%")
+         print("probality of negative spin:",round((spinDOWN/(spinUP+spinDOWN+nothing)*100)),"%")
+         print("probality of no spin:",round((nothing/(spinUP+spinDOWN+nothing)*100)),"%")
     if(sum(DATA)==0):
          print("data is not biased")
-        
-        
-        
-        
+         print("probality of positive spin:",round((spinUP/(spinUP+spinDOWN+nothing)*100)),"%")
+         print("probality of negative spin:",round((spinDOWN/(spinUP+spinDOWN+nothing)*100)),"%")
+         print("probality of no spin:",round((nothing/(spinUP+spinDOWN+nothing)*100)),"%")
+    Biasofdown+=round((spinDOWN/(spinUP+spinDOWN+nothing)*100))
+    Biasofup+=round((spinUP/(spinUP+spinDOWN+nothing)*100))
+    Biasofnothing+=round((nothing/(spinUP+spinDOWN+nothing)*100))
+     
+print("Percent of the spin being negative:",round((Biasofdown/(Biasofnothing+Biasofup+Biasofdown))*100),"%")   
+print("Percent of the spin being positive:",round((Biasofup/(Biasofnothing+Biasofup+Biasofdown))*100),"%") 
+print("Percent of the spin being nothing:",round((Biasofnothing/(Biasofnothing+Biasofup+Biasofdown))*100),"%")     
+
         
         
        
