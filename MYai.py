@@ -5,13 +5,22 @@ cv=0
 cvA=0
 cvB=0
 Biasofnothing=0
+def fgh(uoijd,lijk,urei):
+    return uoijd*complex(lijk,urei)
+DOWNLIST=[0]
+UPLIST=[0]
+NOLIST=[0]
 for i in range(0,10):  
     spinDOWN=0
     spinUP=0
     nothing=0
     DATA=[0]
+
     for i in range(0,1):
         DATA[i]=DATA.insert(i,0)
+        DOWNLIST[i]=DOWNLIST.insert(i,0)
+        UPLIST[i]=UPLIST.insert(i,0)
+        NOLIST[i]=NOLIST.insert(i,0)
     for ikol in range(0,2):
     
     
