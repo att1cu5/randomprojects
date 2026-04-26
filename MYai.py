@@ -530,6 +530,6 @@ print("when spin is 1 :",UPLIST)
 print("when spin is -1 :",DOWNLIST)
 print("when spin is 0 :",NOLIST)
 
-        
+  
         
        
