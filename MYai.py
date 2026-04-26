@@ -6,7 +6,7 @@ cvA=0
 cvB=0
 Biasofnothing=0
 def fgh(uoijd,lijk,urei):
-    return uoijd*complex(lijk,urei)
+    return uoijd
 DOWNLIST=[0]
 UPLIST=[0]
 NOLIST=[0]
@@ -471,16 +471,25 @@ for i in range(0,10):
             G=complex(G.real*G.imag,G.imag)
             LOP=complex(G.real,G.imag)
             print(LOP)
+            UPLIST[ikol]=fgh(LOP,1,-1)
+            NOLIST[ikol]=0
+            DOWNLIST[ikol]=0
             DATA[ikol]=1
         if(G.imag<0):
             spinDOWN+=1
             G=complex(G.real*G.imag,G.imag)
             LOP=complex(G.real,G.imag)
             print(LOP)
+            DOWNLIST[ikol]=fgh(LOP,-1,1)
+            NOLIST[ikol]=0
+            UPLIST[ikol]=0
             DATA[ikol]=-1
         if(G.imag==0):
             nothing+=1
             LOP=complex(0,0)
+            NOLIST[ikol]=fgh(LOP,1,1)
+            DOWNLIST[ikol]=0
+            UPLIST[ikol]=0
             print(LOP)
             DATA[ikol]=0
    
@@ -517,6 +526,9 @@ print("Percent of the spin being negative:",round((Biasofdown/(Biasofnothing+Bia
 
 print("Percent of the spin being positive:",round((Biasofup/(Biasofnothing+Biasofup+Biasofdown))*100),"%") 
 print("Percent of the spin being nothing:",round((Biasofnothing/(Biasofnothing+Biasofup+Biasofdown))*100),"%")     
+print("when spin is 1 :",UPLIST)
+print("when spin is -1 :",DOWNLIST)
+print("when spin is 0 :",NOLIST)
 
         
         
