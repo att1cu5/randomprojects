@@ -582,13 +582,13 @@ print(BRAKET)
 Xc=str(KETstate[0].real)
 Xd=str(BRAstate[0].real)
 output = get_tiny_square_string(Xc,Xd,1)
-print(output)
+print("a squared:",output)
 Xcd=str(KETstate[0].imag)
 Xdd=str(BRAstate[0].imag)
 outputs = get_tiny_square_string(Xcd,Xdd,1)
-print(outputs)
+print("b squared:",outputs)
 outputsa = get_tiny_square_string(output,outputs,2)
-print(outputsa)
+print("c squared:",outputsa)
 
 
 
