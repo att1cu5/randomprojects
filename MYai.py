@@ -535,7 +535,16 @@ for i in range(0,len(UPLIST)):
     ketA+=UPLIST[i]
 for i in range(0,len(DOWNLIST)):
     ketB+=DOWNLIST[i]
-print(ketA)
-print(ketB)
-        
+braA=ketA.conjugate()
+braB=ketB.conjugate()  
+for i in range(0,10):
+    print()
+KETstate=[ketA,ketB]
+BRAstate=[ketA.conjugate(),ketB.conjugate()]
+BRAKET=pow(abs((KETstate[0]*BRAstate[0])+(KETstate[1]*BRAstate[1])),2)
+BRAans=pow(abs(BRAstate[0]),2)+pow(abs(BRAstate[1]),2)
+KETans=pow(abs(KETstate[0]),2)+pow(abs(KETstate[1]),2)
+BRAKETA=BRAans*KETans
+print(BRAKET,BRAKETA)
+
        
