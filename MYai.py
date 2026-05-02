@@ -5,6 +5,8 @@ cv=0
 cvA=0
 cvB=0
 Biasofnothing=0
+def randomG(a,c,limit,seed):
+    return (a*seed+c)%limit
 def fgh(uoijd,lijk,urei):
     return uoijd
 DOWNLIST=[0]
