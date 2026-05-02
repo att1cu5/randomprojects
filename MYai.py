@@ -277,8 +277,11 @@ for i in range(0,10):
             #print(kl)
           
             def hj(lo,po,ikl,low,high):
+                
                 import random
-                ui=random.randint(0,(lo+po+ikl)*100)
+                
+                ui=randomG(randomG(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-pow(2,32),pow(2,32)),random.uniform(-1,1)),randomG(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-pow(2,32),pow(2,32)),random.uniform(-1,1)),(lo+po+ikl)*100,randomG(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-pow(2,32),pow(2,32)),random.uniform(-1,1)))
+                
               
               
                 if(ui<=lo*100):
@@ -539,7 +542,7 @@ for i in range(0,len(DOWNLIST)):
     ketB+=DOWNLIST[i]
 braA=ketA.conjugate()
 braB=ketB.conjugate()  
-for i in range(0,10):
+for i in range(0,5):
     print()
 KETstate=[ketA,ketB]
 BRAstate=[ketA.conjugate(),ketB.conjugate()]
@@ -548,5 +551,12 @@ BRAans=pow(abs(BRAstate[0]),2)+pow(abs(BRAstate[1]),2)
 KETans=pow(abs(KETstate[0]),2)+pow(abs(KETstate[1]),2)
 BRAKETA=BRAans*KETans
 print(BRAKET,BRAKETA)
+
+
+
+
+
+
+
 
        
