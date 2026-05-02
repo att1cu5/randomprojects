@@ -529,7 +529,13 @@ print("Percent of the spin being nothing:",round((Biasofnothing/(Biasofnothing+B
 print("when spin is 1 :",UPLIST)
 print("when spin is -1 :",DOWNLIST)
 print("when spin is 0 :",NOLIST)
-
-  
+ketA=0
+ketB=0
+for i in range(0,len(UPLIST)):
+    ketA+=UPLIST[i]
+for i in range(0,len(DOWNLIST)):
+    ketB+=DOWNLIST[i]
+print(ketA)
+print(ketB)
         
        
