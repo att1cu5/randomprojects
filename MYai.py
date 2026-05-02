@@ -1,4 +1,4 @@
-
+LENGTH=float(input("What is the length of the box: "))
 Biasofdown=0   
 Biasofup=0
 LOP=0
@@ -30,7 +30,13 @@ def get_tiny_square_string(valueA,valueB,op):
     # 3. Format as a string in scientific notation
         return f"{result:E}"
     if(op==4):
-        result = Decimal(str(valueA)) / Decimal(str(valueB)) 
+        result = Decimal(str(valueA)) / Decimal(str(valueB))
+    
+    # 3. Format as a string in scientific notation
+        return f"{result:E}"  
+    if(op==5):
+        
+        result = pow(Decimal(str(valueA)),Decimal(str(valueB)))
     
     # 3. Format as a string in scientific notation
         return f"{result:E}"  
@@ -574,28 +580,37 @@ braB=ketB.conjugate()
 
 KETstate=[ketA,ketB]
 BRAstate=[ketA.conjugate(),ketB.conjugate()]
-BRAKET=pow(abs((KETstate[0]*BRAstate[0])+(KETstate[1]*BRAstate[1])),2)
-BRAans=pow(abs(BRAstate[0]),2)+pow(abs(BRAstate[1]),2)
-KETans=pow(abs(KETstate[0]),2)+pow(abs(KETstate[1]),2)
-BRAKETA=BRAans*KETans
-print(BRAKET)
-Xc=str(KETstate[0].real)
-Xd=str(BRAstate[0].real)
-output = get_tiny_square_string(Xc,Xd,1)
+
+
+#BRAans=pow(abs(BRAstate[0]),2)+pow(abs(BRAstate[1]),2)
+#KETans=pow(abs(KETstate[0]),2)+pow(abs(KETstate[1]),2)
+#BRAKETA=BRAans*KETans
+#print(BRAKET)
+Xcd=str(KETstate[0].imag) #a
+Xdd=str(BRAstate[1].imag) #d
+Xc=str(KETstate[1].real) #b
+Xd=str(BRAstate[0].real) #c
+BC=get_tiny_square_string(Xc,Xd,1) #3
+AC=get_tiny_square_string(Xcd,Xd,1) #1
+AD=get_tiny_square_string(Xcd,Xdd,1) #2
+BD=get_tiny_square_string(Xc,Xdd,1) #4 
+outputAd=get_tiny_square_string(AC,BD,3)
+outputAdd=get_tiny_square_string(AD,BC,2)
+
+z=outputAd+""+outputAdd+"j"
+print("probality amplitude: ",z)
+output = get_tiny_square_string(Xc,Xcd,1)
 print("a squared:",output)
-Xcd=str(KETstate[0].imag)
-Xdd=str(BRAstate[0].imag)
-outputs = get_tiny_square_string(Xcd,Xdd,1)
+
+outputs = get_tiny_square_string(Xd,Xdd,1)
 print("b squared:",outputs)
 outputsa = get_tiny_square_string(output,outputs,2)
-print("c squared:",outputsa)
-
-
-
-
-
-
-
-
-
-       
+print("c squared length of the vector:",outputsa)
+OUput=get_tiny_square_string(outputAd,outputAd,1)
+OIput=get_tiny_square_string(outputAdd,outputAdd,1)
+SUMK=get_tiny_square_string(OUput,OIput,2)
+probailitydensity=get_tiny_square_string(SUMK,0.5,5)
+print("probaility density: ")
+print(probailitydensity)
+maxA=math.sqrt(2/LENGTH)
+print(maxA)
