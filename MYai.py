@@ -1,3 +1,4 @@
+
 Biasofdown=0   
 Biasofup=0
 LOP=0
@@ -5,6 +6,34 @@ cv=0
 cvA=0
 cvB=0
 Biasofnothing=0
+from decimal import Decimal, getcontext
+
+def get_tiny_square_string(valueA,valueB,op):
+    # 1. Set precision high enough to capture the result
+    getcontext().prec = 50 
+    
+    # 2. Convert input to Decimal and calculate
+    # (Works if value is already a string or a Decimal object)
+    if(op==1):
+        result = Decimal(str(valueA)) * Decimal(str(valueB))
+        
+    # 3. Format as a string in scientific notation
+        return f"{result:E}"
+    if(op==2):
+        result = Decimal(str(valueA)) + Decimal(str(valueB)) 
+    
+    # 3. Format as a string in scientific notation
+        return f"{result:E}"
+    if(op==3):
+        result = Decimal(str(valueA)) - Decimal(str(valueB)) 
+    
+    # 3. Format as a string in scientific notation
+        return f"{result:E}"
+    if(op==4):
+        result = Decimal(str(valueA)) / Decimal(str(valueB)) 
+    
+    # 3. Format as a string in scientific notation
+        return f"{result:E}"  
 def randomG(a,c,limit,seed):
     return (a*seed+c)%limit
 def fgh(uoijd,lijk,urei):
@@ -542,15 +571,25 @@ for i in range(0,len(DOWNLIST)):
     ketB+=DOWNLIST[i]
 braA=ketA.conjugate()
 braB=ketB.conjugate()  
-for i in range(0,5):
-    print()
+
 KETstate=[ketA,ketB]
 BRAstate=[ketA.conjugate(),ketB.conjugate()]
 BRAKET=pow(abs((KETstate[0]*BRAstate[0])+(KETstate[1]*BRAstate[1])),2)
 BRAans=pow(abs(BRAstate[0]),2)+pow(abs(BRAstate[1]),2)
 KETans=pow(abs(KETstate[0]),2)+pow(abs(KETstate[1]),2)
 BRAKETA=BRAans*KETans
-print(BRAKET,BRAKETA)
+print(BRAKET)
+Xc=str(KETstate[0].real)
+Xd=str(BRAstate[0].real)
+output = get_tiny_square_string(Xc,Xd,1)
+print(output)
+Xcd=str(KETstate[0].imag)
+Xdd=str(BRAstate[0].imag)
+outputs = get_tiny_square_string(Xcd,Xdd,1)
+print(outputs)
+outputsa = get_tiny_square_string(output,outputs,2)
+print(outputsa)
+
 
 
 
