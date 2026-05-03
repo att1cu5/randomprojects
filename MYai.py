@@ -1,4 +1,5 @@
 LENGTH=float(input("What is the length of the box: "))
+
 Biasofdown=0   
 Biasofup=0
 LOP=0
@@ -6,6 +7,9 @@ cv=0
 cvA=0
 cvB=0
 Biasofnothing=0
+Cspeed=3.00*10**8
+Vfreq=float(input("What is the frequency of the photon: "))
+Lambdas=Cspeed/Vfreq
 from decimal import Decimal, getcontext
 
 def get_tiny_square_string(valueA,valueB,op):
@@ -342,6 +346,17 @@ for i in range(0,10):
             avg[k]=hj(kl[0],kl[1],kl[2],xi,xf)
         del avg[0]
         #print(avg)
+        def deriveA(ERio,k,l):
+            import numpy as np
+            dx=k
+            dy=l
+            ans=np.gradient(ERio, dx, dy)
+        
+        
+        
+        
+          
+            return ans
         def derive(E,s):
             import numpy as np
             dx=s
@@ -598,7 +613,8 @@ outputAd=get_tiny_square_string(AC,BD,3)
 outputAdd=get_tiny_square_string(AD,BC,2)
 
 z=outputAd+""+outputAdd+"j"
-print("probality amplitude: ",z)
+print("probality amplitude: ")
+print(z)
 output = get_tiny_square_string(Xc,Xcd,1)
 print("a squared:",output)
 
@@ -612,5 +628,22 @@ SUMK=get_tiny_square_string(OUput,OIput,2)
 probailitydensity=get_tiny_square_string(SUMK,0.5,5)
 print("probaility density: ")
 print(probailitydensity)
-maxA=math.sqrt(2/LENGTH)
+maxA=math.sqrt(2)/math.sqrt(LENGTH)
 print(maxA)
+Ktimes=(2*math.pi)/Lambdas
+import random
+N=randomG(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-pow(2,32),pow(2,32)),random.uniform(-1,1))
+print(Ktimes)
+X=(((2*N)+1)*math.pi)/(2*Ktimes)
+print("Psi x:",X)
+
+
+
+
+
+
+
+
+
+
+       
