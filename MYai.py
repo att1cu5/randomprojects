@@ -647,7 +647,7 @@ for idf in range(0,7):
     #print("Psi x:",X)
 print("list of probaility densities:")
 print(listofdensity)
-print("list of psi of x:")
+print("list of psi of y:")
 print(Xpos)
 print("list of probaility amplitudes:")
 print(probalityamplitude)
