@@ -1,5 +1,5 @@
-LENGTH=float(input("What is the length of the box: "))
-
+#LENGTH=float(input("What is the length of the box: "))
+LENGTH=32
 Biasofdown=0   
 Biasofup=0
 LOP=0
@@ -8,7 +8,8 @@ cvA=0
 cvB=0
 Biasofnothing=0
 Cspeed=3.00*10**8
-Vfreq=float(input("What is the frequency of the photon: "))
+#Vfreq=float(input("What is the frequency of the photon: "))
+Vfreq=32
 Lambdas=Cspeed/Vfreq
 from decimal import Decimal, getcontext
 
@@ -525,7 +526,7 @@ for i in range(0,10):
             spinUP+=1
             G=complex(G.real*G.imag,G.imag)
             LOP=complex(G.real,G.imag)
-            print(LOP)
+            #print(LOP)
             UPLIST[ikol]=fgh(LOP,1,-1)
             NOLIST[ikol]=0
             DOWNLIST[ikol]=0
@@ -534,7 +535,7 @@ for i in range(0,10):
             spinDOWN+=1
             G=complex(G.real*G.imag,G.imag)
             LOP=complex(G.real,G.imag)
-            print(LOP)
+            #print(LOP)
             DOWNLIST[ikol]=fgh(LOP,-1,1)
             NOLIST[ikol]=0
             UPLIST[ikol]=0
@@ -545,7 +546,7 @@ for i in range(0,10):
             NOLIST[ikol]=fgh(LOP,1,1)
             DOWNLIST[ikol]=0
             UPLIST[ikol]=0
-            print(LOP)
+            #print(LOP)
             DATA[ikol]=0
    
     #print("amount of times spinUP: ", spinUP)
@@ -554,36 +555,36 @@ for i in range(0,10):
     #print(DATA)
     if(sum(DATA)>0):
 
-         print("data is trending positive")
-         print("probality of positive spin:",round((spinUP/(spinUP+spinDOWN+nothing)*100)),"%")
-         print("probality of negative spin:",round((spinDOWN/(spinUP+spinDOWN+nothing)*100)),"%")
-         print("probality of no spin:",round((nothing/(spinUP+spinDOWN+nothing)*100)),"%")
+         #print("data is trending positive")
+         #print("probality of positive spin:",round((spinUP/(spinUP+spinDOWN+nothing)*100)),"%")
+         #print("probality of negative spin:",round((spinDOWN/(spinUP+spinDOWN+nothing)*100)),"%")
+         #print("probality of no spin:",round((nothing/(spinUP+spinDOWN+nothing)*100)),"%")
          cvB+=1
     if(sum(DATA)<0):
          
-         print("data is trending negative")
-         print("probality of positive spin:",round((spinUP/(spinUP+spinDOWN+nothing)*100)),"%")
-         print("probality of negative spin:",round((spinDOWN/(spinUP+spinDOWN+nothing)*100)),"%")
-         print("probality of no spin:",round((nothing/(spinUP+spinDOWN+nothing)*100)),"%")
+         #print("data is trending negative")
+         #print("probality of positive spin:",round((spinUP/(spinUP+spinDOWN+nothing)*100)),"%")
+         #print("probality of negative spin:",round((spinDOWN/(spinUP+spinDOWN+nothing)*100)),"%")
+         #print("probality of no spin:",round((nothing/(spinUP+spinDOWN+nothing)*100)),"%")
          cvA+=1
     if(sum(DATA)==0):
          #print(0)
-         print("data is not biased")
-         print("probality of positive spin:",round((spinUP/(spinUP+spinDOWN+nothing)*100)),"%")
-         print("probality of negative spin:",round((spinDOWN/(spinUP+spinDOWN+nothing)*100)),"%")
-         print("probality of no spin:",round((nothing/(spinUP+spinDOWN+nothing)*100)),"%")
+         #print("data is not biased")
+         #print("probality of positive spin:",round((spinUP/(spinUP+spinDOWN+nothing)*100)),"%")
+         #print("probality of negative spin:",round((spinDOWN/(spinUP+spinDOWN+nothing)*100)),"%")
+         #print("probality of no spin:",round((nothing/(spinUP+spinDOWN+nothing)*100)),"%")
          cv+=1
     Biasofdown+=round((spinDOWN/(spinUP+spinDOWN+nothing)*100))
     Biasofup+=round((spinUP/(spinUP+spinDOWN+nothing)*100))
     Biasofnothing+=round((nothing/(spinUP+spinDOWN+nothing)*100))
      
-print("Percent of the spin being negative:",round((Biasofdown/(Biasofnothing+Biasofup+Biasofdown))*100),"%")   
+#print("Percent of the spin being negative:",round((Biasofdown/(Biasofnothing+Biasofup+Biasofdown))*100),"%")   
 
-print("Percent of the spin being positive:",round((Biasofup/(Biasofnothing+Biasofup+Biasofdown))*100),"%") 
-print("Percent of the spin being nothing:",round((Biasofnothing/(Biasofnothing+Biasofup+Biasofdown))*100),"%")     
-print("when spin is 1 :",UPLIST)
-print("when spin is -1 :",DOWNLIST)
-print("when spin is 0 :",NOLIST)
+#print("Percent of the spin being positive:",round((Biasofup/(Biasofnothing+Biasofup+Biasofdown))*100),"%") 
+#print("Percent of the spin being nothing:",round((Biasofnothing/(Biasofnothing+Biasofup+Biasofdown))*100),"%")     
+#print("when spin is 1 :",UPLIST)
+#print("when spin is -1 :",DOWNLIST)
+#print("when spin is 0 :",NOLIST)
 ketA=0
 ketB=0
 for i in range(0,len(UPLIST)):
@@ -616,12 +617,12 @@ z=outputAd+""+outputAdd+"j"
 print("probality amplitude: ")
 print(z)
 output = get_tiny_square_string(Xc,Xcd,1)
-print("a squared:",output)
+#print("a squared:",output)
 
 outputs = get_tiny_square_string(Xd,Xdd,1)
-print("b squared:",outputs)
+#print("b squared:",outputs)
 outputsa = get_tiny_square_string(output,outputs,2)
-print("c squared length of the vector:",outputsa)
+#print("c squared length of the vector:",outputsa)
 OUput=get_tiny_square_string(outputAd,outputAd,1)
 OIput=get_tiny_square_string(outputAdd,outputAdd,1)
 SUMK=get_tiny_square_string(OUput,OIput,2)
@@ -629,11 +630,11 @@ probailitydensity=get_tiny_square_string(SUMK,0.5,5)
 print("probaility density: ")
 print(probailitydensity)
 maxA=math.sqrt(2)/math.sqrt(LENGTH)
-print(maxA)
+#print(maxA)
 Ktimes=(2*math.pi)/Lambdas
 import random
 N=randomG(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-pow(2,32),pow(2,32)),random.uniform(-1,1))
-print(Ktimes)
+#print(Ktimes)
 X=(((2*N)+1)*math.pi)/(2*Ktimes)
 print("Psi x:",X)
 
