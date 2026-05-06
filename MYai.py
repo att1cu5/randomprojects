@@ -645,9 +645,11 @@ for idf in range(0,7):
     
     #print(Ktimes)
     X=(((2*N)+1)*math.pi)/(2*Ktimes)
-    Yl=(((2*Ktimes*X)/math.pi)-1)/2
-    Xl=(((2*Yl)+1)*math.pi)/(2*Ktimes)
-    print(N==Yl)
+    Y=(((2*Ktimes*X)/math.pi)-1)/2
+    Xl=(((2*Y)+1)*math.pi)/(2*Ktimes)
+    Yl=(((2*Ktimes*Xl)/math.pi)-1)/2
+    print(Xl==X)
+    print(Yl==Y)
     Xpos[idf]=Xl
     Ypos[idf]=Yl
     #print("Psi x:",X)
