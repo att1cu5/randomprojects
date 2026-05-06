@@ -2,8 +2,8 @@ listofdensity=[0,0,0,0,0,0,0]
 probalityamplitude=[0,0,0,0,0,0,0]
 Xpos=[0,0,0,0,0,0,0]
 Ypos=[0,0,0,0,0,0,0]
-nosolution=[0,0,0,0,0,0,0]
-solution=[0,0,0,0,0,0,0]
+angle=[0,0,0,0,0,0,0]
+angleA=[0,0,0,0,0,0,0]
 for idf in range(0,7):
     #LENGTH=float(input("What is the length of the box: "))
     LENGTH=32
@@ -650,10 +650,8 @@ for idf in range(0,7):
     Y=(((2*Ktimes*X)/math.pi)-1)/2
     Xl=(((2*Y)+1)*math.pi)/(2*Ktimes)
     Yl=(((2*Ktimes*Xl)/math.pi)-1)/2
-    if(Xl==X and Y==Yl):
-        solution[idf]=1
-    else:
-        nosolution[idf]=1
+    angleA[idf]=math.atan2(Y,X)
+    angle[idf]=math.atan2(Yl,Xl)
     Xpos[idf]=Xl
     Ypos[idf]=Yl
     #print("Psi x:",X)
@@ -665,9 +663,10 @@ print("list of psi of x:")
 print(Xpos)
 print("list of probaility amplitudes:")
 print(probalityamplitude)
-
-    
-    
+print("list of angle:")
+print(angle)
+print("list of angleA:")
+print(angleA)    
     
     
     
