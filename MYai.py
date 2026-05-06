@@ -2,6 +2,8 @@ listofdensity=[0,0,0,0,0,0,0]
 probalityamplitude=[0,0,0,0,0,0,0]
 Xpos=[0,0,0,0,0,0,0]
 Ypos=[0,0,0,0,0,0,0]
+nosolution=[0,0,0,0,0,0,0]
+solution=[0,0,0,0,0,0,0]
 for idf in range(0,7):
     #LENGTH=float(input("What is the length of the box: "))
     LENGTH=32
@@ -648,8 +650,10 @@ for idf in range(0,7):
     Y=(((2*Ktimes*X)/math.pi)-1)/2
     Xl=(((2*Y)+1)*math.pi)/(2*Ktimes)
     Yl=(((2*Ktimes*Xl)/math.pi)-1)/2
-    print(Xl==X)
-    print(Yl==Y)
+    if(Xl==X and Y==Yl):
+        solution[idf]=1
+    else:
+        nosolution[idf]=1
     Xpos[idf]=Xl
     Ypos[idf]=Yl
     #print("Psi x:",X)
