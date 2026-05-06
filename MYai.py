@@ -1,6 +1,7 @@
 listofdensity=[0,0,0,0,0,0,0]
 probalityamplitude=[0,0,0,0,0,0,0]
 Xpos=[0,0,0,0,0,0,0]
+Ypos=[0,0,0,0,0,0,0]
 for idf in range(0,7):
     #LENGTH=float(input("What is the length of the box: "))
     LENGTH=32
@@ -641,16 +642,24 @@ for idf in range(0,7):
     Ktimes=(2*math.pi)/Lambdas
     import random
     N=randomG(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-pow(2,32),pow(2,32)),random.uniform(-1,1))
+    
     #print(Ktimes)
     X=(((2*N)+1)*math.pi)/(2*Ktimes)
-    Xpos[idf]=X
+    Yl=(((2*Ktimes*X)/math.pi)-1)/2
+    Xl=(((2*Yl)+1)*math.pi)/(2*Ktimes)
+    print(N==Yl)
+    Xpos[idf]=Xl
+    Ypos[idf]=Yl
     #print("Psi x:",X)
 print("list of probaility densities:")
 print(listofdensity)
 print("list of psi of y:")
+print(Ypos)
+print("list of psi of x:")
 print(Xpos)
 print("list of probaility amplitudes:")
 print(probalityamplitude)
+
     
     
     
