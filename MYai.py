@@ -643,8 +643,8 @@ for idf in range(0,8):
     #print(maxA)
     Ktimes=(2*math.pi)/Lambdas
     import random
-    N=randomG(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-pow(2,32),pow(2,32)),random.uniform(-1,1))
-    
+    #N=randomG(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-pow(2,32),pow(2,32)),random.uniform(-1,1))
+    N=idf
     #print(Ktimes)
     X=(((2*N)+1)*math.pi)/(2*Ktimes)
     Y=(((2*Ktimes*X)/math.pi)-1)/2
