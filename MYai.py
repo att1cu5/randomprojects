@@ -668,8 +668,7 @@ print("list of angles:")
 print(angle)
 print("list of magnitudes:")
 print(magnitude)
-print("Final direction:")
-print(sum(angle)/180)
+
 
     
     
