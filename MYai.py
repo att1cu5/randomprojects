@@ -1,10 +1,10 @@
-listofdensity=[0,0,0,0,0,0,0]
-probalityamplitude=[0,0,0,0,0,0,0]
-Xpos=[0,0,0,0,0,0,0]
-Ypos=[0,0,0,0,0,0,0]
-angle=[0,0,0,0,0,0,0]
+listofdensity=[0,0,0,0,0,0,0,0]
+probalityamplitude=[0,0,0,0,0,0,0,0]
+Xpos=[0,0,0,0,0,0,0,0]
+Ypos=[0,0,0,0,0,0,0,0]
+angle=[0,0,0,0,0,0,0,0]
 
-for idf in range(0,7):
+for idf in range(0,8):
     #LENGTH=float(input("What is the length of the box: "))
     LENGTH=32
     Biasofdown=0   
