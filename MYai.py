@@ -1,10 +1,10 @@
-listofdensity=[0,0,0,0,0,0,0,0]
-probalityamplitude=[0,0,0,0,0,0,0,0]
-Xpos=[0,0,0,0,0,0,0,0]
-Ypos=[0,0,0,0,0,0,0,0]
-angle=[0,0,0,0,0,0,0,0]
-
-for idf in range(0,8):
+listofdensity=[0,0,0,0,0,0,0,0,0]
+probalityamplitude=[0,0,0,0,0,0,0,0,0]
+Xpos=[0,0,0,0,0,0,0,0,0]
+Ypos=[0,0,0,0,0,0,0,0,0]
+angle=[0,0,0,0,0,0,0,0,0]
+magnitude=[0,0,0,0,0,0,0,0,0]
+for idf in range(0,9):
     #LENGTH=float(input("What is the length of the box: "))
     LENGTH=32
     Biasofdown=0   
@@ -652,6 +652,7 @@ for idf in range(0,8):
     Yl=(((2*Ktimes*Xl)/math.pi)-1)/2
     
     angle[idf]=math.atan2(Yl,Xl)
+    magnitude[idf]=math.sqrt(math.pow(Yl,2)+math.pow(Xl,2))
     Xpos[idf]=Xl
     Ypos[idf]=Yl
     #print("Psi x:",X)
@@ -663,8 +664,10 @@ print("list of psi of x:")
 print(Xpos)
 print("list of probaility amplitudes:")
 print(probalityamplitude)
-print("list of angle:")
+print("list of angles:")
 print(angle)
+print("list of magnitudes:")
+print(magnitude)
  
     
     
