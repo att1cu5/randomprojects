@@ -18,6 +18,42 @@ for idf in range(0,8):
     #Vfreq=float(input("What is the frequency of the photon: "))
     Vfreq=32
     Lambdas=Cspeed/Vfreq
+    
+
+    def simpsons_quad(func, a, b, n=1000):
+        import numpy as np
+        """
+        Approximates the integral of func from a to b using Composite Simpson's Rule.
+        Returns: (result, estimated_error)
+        """
+        if n % 2 != 0:
+            n += 1  # n must be even for Simpson's Rule
+        
+        x = np.linspace(a, b, n + 1)
+        y = func(x)
+        dx = (b - a) / n
+        
+        # Simpson's Rule Formula: (dx/3) * [f(x0) + 4*sum(f_odd) + 2*sum(f_even) + f(xn)]
+        result = (dx / 3) * (y[0] + y[-1] + 
+                             4 * np.sum(y[1:-1:2]) + 
+                             2 * np.sum(y[2:-2:2]))
+        
+        # Simple error estimation comparing n and n/2 steps
+        result_half = (dx * 2 / 3) * (y[0] + y[-1] + 
+                                      4 * np.sum(y[2:-2:4]) + 
+                                      2 * np.sum(y[4:-4:4])) if n >= 4 else 0
+        error = abs(result - result_half)
+        
+        return result, error
+        
+        
+        # Example: PDF function (e.g., Normal Distribution)
+        
+    def pdf(x):
+            import numpy as np
+            return (1 / np.sqrt(2 * np.pi)) * np.exp(-0.5 * x**2)
+        
+      
     from decimal import Decimal, getcontext
     
     def get_tiny_square_string(valueA,valueB,op):
@@ -662,13 +698,16 @@ print("list of psi of y:")
 print(Ypos)
 print("list of psi of x:")
 print(Xpos)
-print("list of probaility amplitudes:")
+print("list of probability amplitudes:")
 print(probalityamplitude)
 print("list of angles:")
 print(angle)
 print("list of magnitudes:")
 print(magnitude)
-
+a, b = -1, 1
+result, error = simpsons_quad(pdf, a, b)
+print("probability:")
+print(result)
 
     
     
