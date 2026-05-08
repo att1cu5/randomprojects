@@ -4,6 +4,8 @@ Xpos=[0,0,0,0,0,0,0,0,0,0]
 Ypos=[0,0,0,0,0,0,0,0,0,0]
 angle=[0,0,0,0,0,0,0,0,0,0]
 magnitude=[0,0,0,0,0,0,0,0,0,0]
+def jk(g,kl,a,b):
+    return (g**4*(180*kl))/((b-a)**5)
 for idf in range(0,10):
     #LENGTH=float(input("What is the length of the box: "))
     LENGTH=32
@@ -19,8 +21,8 @@ for idf in range(0,10):
     Vfreq=32
     Lambdas=Cspeed/Vfreq
     
-
-    def simpsons_quad(func, a, b, n=100):
+    
+    def simpsons_quad(func, a, b, n):
         import numpy as np
         """
         Approximates the integral of func from a to b using Composite Simpson's Rule.
@@ -704,37 +706,46 @@ print("list of angles:")
 print(angle)
 print("list of magnitudes:")
 print(magnitude)
+
+
+
+
+ 
+
 Erate=0
 ErateA=0
 a, b = min(Ypos), max(Ypos)
-result, error = simpsons_quad(pdf, a, b)
+result, error = simpsons_quad(pdf, a, b,100)
 Erate=abs(error)/abs(result)*100
+
+
+print()
 print("number min result:")
-print((result-Erate)*100,"%")
+print(((result-Erate)*100)-jk(100,0.001,a,b),"%")
 print("number max result:")
-print((result+Erate)*100,"%")
+print(((result+Erate)*100)+jk(100,0.001,a,b),"%")
 
 print("number min result:")
-print((1-(result-Erate))*100,"%")
+print(((1-(result-Erate))*100)-jk(100,0.001,a,b),"%")
 print("number max result:")
-print((1-(result+Erate))*100,"%")
+print(((1-(result+Erate))*100)+jk(100,0.001,a,b),"%")
 
 av, bv = min(Xpos), max(Xpos)
-resultv, errorv = simpsons_quad(pdf, av, bv)
+resultv, errorv = simpsons_quad(pdf, av, bv,100)
 if(resultv==0):
-    resultv=1e-9
+    resultv=1e-100
+
 ErateA=abs(errorv)/abs(resultv)*100
 print("number min result:")
-print((resultv-ErateA)*100,"%")
+print(((resultv-ErateA)*100)-jk(100,0.001,av,bv),"%")
 print("number max result:")
-print((resultv+ErateA)*100,"%")
+print(((resultv+ErateA)*100)+jk(100,0.001,av,bv),"%")
 print("number min result:")
-print((1-(resultv-ErateA))*100,"%")
+print(((1-(resultv-ErateA))*100)-jk(100,0.001,av,bv),"%")
 print("number max result:")
-print((1-(resultv+ErateA))*100,"%")
+print(((1-(resultv+ErateA))*100)+jk(100,0.001,av,bv),"%")
 print()
 print()
 print()
 print()
-
 
