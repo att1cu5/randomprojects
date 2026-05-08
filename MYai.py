@@ -4,6 +4,7 @@ Xpos=[0,0,0,0,0,0,0,0,0,0]
 Ypos=[0,0,0,0,0,0,0,0,0,0]
 angle=[0,0,0,0,0,0,0,0,0,0]
 magnitude=[0,0,0,0,0,0,0,0,0,0]
+prob=[0,0,0,0,0,0,0,0,0,0]
 def jk(g,kl,a,b):
     return (g**4*(180*kl))/((b-a)**5)
 for idf in range(0,10):
@@ -60,7 +61,7 @@ for idf in range(0,10):
     
     def get_tiny_square_string(valueA,valueB,op):
         # 1. Set precision high enough to capture the result
-        getcontext().prec = 50 
+        getcontext().prec = 50
         
         # 2. Convert input to Decimal and calculate
         # (Works if value is already a string or a Decimal object)
@@ -662,6 +663,7 @@ for idf in range(0,10):
     
     #print("probality amplitude: ")
     probalityamplitude[idf]=z
+    prob[idf]=get_tiny_square_string(get_tiny_square_string(outputAd,2,5),get_tiny_square_string(outputAdd,2,5),2)
     #print(z)
     output = get_tiny_square_string(Xc,Xcd,1)
     #print("a squared:",output)
@@ -706,46 +708,19 @@ print("list of angles:")
 print(angle)
 print("list of magnitudes:")
 print(magnitude)
-
+print("list of probability:")
+print(prob)
 
 
 
  
 
-Erate=0
-ErateA=0
-a, b = min(Ypos), max(Ypos)
-result, error = simpsons_quad(pdf, a, b,100)
-Erate=abs(error)/abs(result)*100
+
 
 
 print()
-print("number min result:")
-print(((result-Erate))*(jk(100,0.001,a,b)*(result-Erate)),"%")
-print("number max result:")
-print(((result+Erate))*(jk(100,0.001,a,b)*(result+Erate)),"%")
 
-print("number min result:")
-print(((1-(result-Erate)))*(jk(100,0.001,a,b)*(result-Erate)),"%")
-print("number max result:")
-print(((1-(result+Erate)))*(jk(100,0.001,a,b)*(result+Erate)),"%")
 
-av, bv = min(Xpos), max(Xpos)
-resultv, errorv = simpsons_quad(pdf, av, bv,100)
-if(resultv==0):
-    resultv=1e-100
-
-ErateA=abs(errorv)/abs(resultv)*100
-print("number min result:")
-print(((resultv-ErateA))*(jk(100,0.001,av,bv)*(resultv-ErateA)),"%")
-print("number max result:")
-print(((resultv+ErateA))*(jk(100,0.001,av,bv)*((resultv+ErateA))),"%")
-print("number min result:")
-print(((1-(resultv-ErateA)))*(jk(100,0.001,av,bv)*(resultv-ErateA)),"%")
-print("number max result:")
-print(((1-(resultv+ErateA)))*(jk(100,0.001,av,bv)*(resultv+ErateA)),"%")
 print()
 print()
 print()
-print()
-
