@@ -20,7 +20,7 @@ for idf in range(0,8):
     Lambdas=Cspeed/Vfreq
     
 
-    def simpsons_quad(func, a, b, n=1000):
+    def simpsons_quad(func, a, b, n=100):
         import numpy as np
         """
         Approximates the integral of func from a to b using Composite Simpson's Rule.
@@ -704,15 +704,18 @@ print("list of angles:")
 print(angle)
 print("list of magnitudes:")
 print(magnitude)
-a, b = -1, 1
+a, b = min(Ypos), max(Ypos)
 result, error = simpsons_quad(pdf, a, b)
-print("probability:")
+print("number one result:")
 print(result)
+print("number two result:")
+print(1-result)
+print("error:")
+print(error)
+print()
+print()
+print()
+print()
 
-    
-    
-    
-    
-    
-    
-           
+
+
