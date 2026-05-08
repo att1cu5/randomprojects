@@ -707,14 +707,18 @@ print(magnitude)
 a, b = min(Ypos), max(Ypos)
 result, error = simpsons_quad(pdf, a, b)
 print("number one result:")
-print(result)
+print(result*100,"%")
 print("number two result:")
-print(1-result)
-
+print((1-result)*100,"%")
+av, bv = min(Xpos), max(Xpos)
+resultv, errorv = simpsons_quad(pdf, av, bv)
+print("number one result:")
+print(resultv*100,"%")
+print("number two result:")
+print((1-resultv)*100,"%")
 print()
 print()
 print()
 print()
-
 
 
