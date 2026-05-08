@@ -721,14 +721,14 @@ Erate=abs(error)/abs(result)*100
 
 print()
 print("number min result:")
-print(((result-Erate)*100)*(jk(100,0.001,a,b)*(result-Erate)),"%")
+print(((result-Erate))*(jk(100,0.001,a,b)*(result-Erate)),"%")
 print("number max result:")
-print(((result+Erate)*100)*(jk(100,0.001,a,b)*(result+Erate)),"%")
+print(((result+Erate))*(jk(100,0.001,a,b)*(result+Erate)),"%")
 
 print("number min result:")
-print(((1-(result-Erate))*100)*(jk(100,0.001,a,b)*(result-Erate)),"%")
+print(((1-(result-Erate)))*(jk(100,0.001,a,b)*(result-Erate)),"%")
 print("number max result:")
-print(((1-(result+Erate))*100)*(jk(100,0.001,a,b)*(result+Erate)),"%")
+print(((1-(result+Erate)))*(jk(100,0.001,a,b)*(result+Erate)),"%")
 
 av, bv = min(Xpos), max(Xpos)
 resultv, errorv = simpsons_quad(pdf, av, bv,100)
@@ -737,13 +737,13 @@ if(resultv==0):
 
 ErateA=abs(errorv)/abs(resultv)*100
 print("number min result:")
-print(((resultv-ErateA)*100)*(jk(100,0.001,av,bv)*(resultv-ErateA)),"%")
+print(((resultv-ErateA))*(jk(100,0.001,av,bv)*(resultv-ErateA)),"%")
 print("number max result:")
-print(((resultv+ErateA)*100)*(jk(100,0.001,av,bv)*((resultv+ErateA))),"%")
+print(((resultv+ErateA))*(jk(100,0.001,av,bv)*((resultv+ErateA))),"%")
 print("number min result:")
-print(((1-(resultv-ErateA))*100)*(jk(100,0.001,av,bv)*(resultv-ErateA)),"%")
+print(((1-(resultv-ErateA)))*(jk(100,0.001,av,bv)*(resultv-ErateA)),"%")
 print("number max result:")
-print(((1-(resultv+ErateA))*100)*(jk(100,0.001,av,bv)*(resultv+ErateA)),"%")
+print(((1-(resultv+ErateA)))*(jk(100,0.001,av,bv)*(resultv+ErateA)),"%")
 print()
 print()
 print()
