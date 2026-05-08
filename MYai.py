@@ -708,7 +708,7 @@ Erate=0
 ErateA=0
 a, b = min(Ypos), max(Ypos)
 result, error = simpsons_quad(pdf, a, b)
-Erate=abs(error)/abs(result)
+Erate=abs(error)/abs(result)*100
 print("number min result:")
 print((result-Erate)*100,"%")
 print("number max result:")
@@ -721,7 +721,9 @@ print((1-(result+Erate))*100,"%")
 
 av, bv = min(Xpos), max(Xpos)
 resultv, errorv = simpsons_quad(pdf, av, bv)
-ErateA=abs(errorv)/abs(resultv)
+if(resultv==0):
+    resultv=1e-9
+ErateA=abs(errorv)/abs(resultv)*100
 print("number min result:")
 print((resultv-ErateA)*100,"%")
 print("number max result:")
