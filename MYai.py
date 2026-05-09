@@ -5,6 +5,12 @@ Ypos=[0,0,0,0,0,0,0,0,0,0]
 angle=[0,0,0,0,0,0,0,0,0,0]
 magnitude=[0,0,0,0,0,0,0,0,0,0]
 prob=[0,0,0,0,0,0,0,0,0,0]
+def normalize(amplitudes):
+    # Calculate the scale factor: square root of the sum of squares
+    factor = sum(x**2 for x in amplitudes)**0.5
+    
+    # Return each original value divided by the factor
+    return [x / factor for x in amplitudes]
 def jk(g,kl,a,b):
     return (g**4*(180*kl))/((b-a)**5)
 for idf in range(0,10):
@@ -667,7 +673,7 @@ for idf in range(0,10):
     
     #print("probality amplitude: ")
     probalityamplitude[idf]=z
-    prob[idf]=get_tiny_square_string(get_tiny_square_string(outputAd,2,5),get_tiny_square_string(outputAdd,2,5),2)
+   
     #print(z)
     output = get_tiny_square_string(Xc,Xcd,1)
     #print("a squared:",output)
@@ -727,8 +733,8 @@ oper=get_tiny_square_string(ople,ilehj,2)
 
 ilkope=get_tiny_square_string(lopej,oper,2)
 finalsumofprob=get_tiny_square_string(ilkope,ilko,2)
-print(get_tiny_square_string(finalsumofprob,2,5))
-
+#print(get_tiny_square_string(finalsumofprob,2,5))
+print(normalize(probalityamplitude))
 
 
 
