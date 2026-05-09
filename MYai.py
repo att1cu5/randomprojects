@@ -88,7 +88,11 @@ for idf in range(0,10):
         if(op==5):
             
             result = pow(Decimal(str(valueA)),Decimal(str(valueB)))
-        
+            return f"{result:E}"
+        if(op==6):
+            
+            result = abs(Decimal(str(valueA)))
+            
         # 3. Format as a string in scientific notation
             return f"{result:E}"  
     def randomG(a,c,limit,seed):
