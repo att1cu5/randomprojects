@@ -711,9 +711,19 @@ print(magnitude)
 print("list of probability:")
 print(prob)
 
+print("total probability")
 
+ukl=get_tiny_square_string(prob[0],prob[1],2)
+klo=get_tiny_square_string(prob[2],prob[3],2)
+ople=get_tiny_square_string(prob[4],prob[5],2)
+ilehj=get_tiny_square_string(prob[6],prob[7],2)
+ilko=get_tiny_square_string(prob[8],prob[9],2)
+lopej=get_tiny_square_string(ukl,klo,2)
+oper=get_tiny_square_string(ople,ilehj,2)
 
- 
+ilkope=get_tiny_square_string(lopej,oper,2)
+finalsumofprob=get_tiny_square_string(ilkope,ilko,2)
+print(finalsumofprob)
 
 
 
