@@ -688,6 +688,9 @@ for idf in range(0,10):
     probailitydensity=get_tiny_square_string(SUMK,0.5,5)
     #print("probaility density: ")
     #print(probailitydensity)
+    realval=get_tiny_square_string(outputAd,outputAd,1)
+    imagval=get_tiny_square_string(outputAdd,outputAdd,1)
+    prob[idf]=get_tiny_square_string(realval,imagval,2)
     listofdensity[idf]=probailitydensity
     maxA=math.sqrt(2)/math.sqrt(LENGTH)
     #print(maxA)
