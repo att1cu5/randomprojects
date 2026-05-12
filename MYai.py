@@ -742,7 +742,7 @@ C=get_tiny_square_string(get_tiny_square_string(finalsumofprob,2,5),0.5,5)
 print("total norm: ")
 print(C)
 print("normalizing factor: ")
-N=get_tiny_square_string(1,C,4)
+N=get_tiny_square_string(get_tiny_square_string(1,C,4),get_tiny_square_string(1,C,4),1)
 print(N)
 #print(normalize(probalityamplitude))
 
