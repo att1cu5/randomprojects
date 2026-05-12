@@ -737,6 +737,9 @@ oper=get_tiny_square_string(ople,ilehj,2)
 ilkope=get_tiny_square_string(lopej,oper,2)
 finalsumofprob=get_tiny_square_string(ilkope,ilko,2)
 print(get_tiny_square_string(finalsumofprob,2,5))
+C=get_tiny_square_string(get_tiny_square_string(finalsumofprob,2,5),0.5,5)
+print("total norm: ")
+print(C)
 #print(normalize(probalityamplitude))
 
 
