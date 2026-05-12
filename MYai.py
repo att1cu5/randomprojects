@@ -746,7 +746,7 @@ N=get_tiny_square_string(get_tiny_square_string(1,C,4),get_tiny_square_string(1,
 print(N)
 #print(normalize(probalityamplitude))
 
-print("normalize wavefunction: ")
+print("normalize probability: ")
 normalizedproduct=get_tiny_square_string(wavefunction,N,1)
 print(normalizedproduct)
 print()
