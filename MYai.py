@@ -5,15 +5,11 @@ Ypos=[0,0,0,0,0,0,0,0,0,0]
 angle=[0,0,0,0,0,0,0,0,0,0]
 magnitude=[0,0,0,0,0,0,0,0,0,0]
 prob=[0,0,0,0,0,0,0,0,0,0]
-def normalize(amplitudes):
-    # Calculate the scale factor: square root of the sum of squares
-    factor = sum(x**2 for x in amplitudes)**0.5
+giol=10
     
-    # Return each original value divided by the factor
-    return [x / factor for x in amplitudes]
 def jk(g,kl,a,b):
     return (g**4*(180*kl))/((b-a)**5)
-for idf in range(0,10):
+for idf in range(0,giol):
     #LENGTH=float(input("What is the length of the box: "))
     LENGTH=32
     Biasofdown=0   
@@ -108,7 +104,7 @@ for idf in range(0,10):
     DOWNLIST=[0]
     UPLIST=[0]
     NOLIST=[0]
-    for i in range(0,10):  
+    for i in range(0,giol):  
         spinDOWN=0
         spinUP=0
         nothing=0
