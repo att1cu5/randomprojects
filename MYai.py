@@ -699,7 +699,7 @@ for idf in range(0,giol):
     Xl=(((2*Y)+1)*math.pi)/(2*Ktimes)
     Yl=(((2*Ktimes*Xl)/math.pi)-1)/2
     
-    angle[idf]=(math.atan2(Yl,Xl))
+    angle[idf]=(math.atan2(Yl,Xl))*(180/math.pi)
     magnitude[idf]=math.sqrt(math.pow(Yl,2)+math.pow(Xl,2))
     Xpos[idf]=Xl
     Ypos[idf]=Yl
