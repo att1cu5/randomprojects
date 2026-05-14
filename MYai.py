@@ -5,6 +5,7 @@ Ypos=[0,0,0,0,0,0,0,0,0,0]
 angle=[0,0,0,0,0,0,0,0,0,0]
 magnitude=[0,0,0,0,0,0,0,0,0,0]
 prob=[0,0,0,0,0,0,0,0,0,0]
+per=[0,0,0,0,0,0,0,0,0,0]
 giol=10
 def jk(g,kl,a,b):
     return (g**4*(180*kl))/((b-a)**5)
@@ -761,7 +762,9 @@ print(finalsumofprobA)
 normalizedproduct=get_tiny_square_string(wavefunction,N,1)
 for i in range(0,len(prob)):
     print("Probability of "+str(i+1)+" item is equal to: ")
-    print(get_tiny_square_string(prob[i],finalsumofprobA,4))
+    jlplp=get_tiny_square_string(prob[i],finalsumofprobA,4)
+    print(jlplp)
+    per[i]=get_tiny_square_string(jlplp,100,1)
 print("normalize probability: ")
 
 print(normalizedproduct)
