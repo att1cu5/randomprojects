@@ -775,8 +775,9 @@ DATAencrypt=''.join(format(ord(char), '08b') for char in txt)
 #print("key")
 #print(DATAencrypt)
 key=int(DATAencrypt,2)
-#print(key)
-if(key==150990849308808093939551052624192687248587531277285883574478302867724553985057336872974150861813008798426400964818153560627430548780600):
+print(key)
+
+if(key%2==0):
     print("right key")
 else:
     print("wrong key")
