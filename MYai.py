@@ -1,3 +1,4 @@
+import random
 listofdensity=[0,0,0,0,0,0,0,0,0,0]
 probalityamplitude=[0,0,0,0,0,0,0,0,0,0]
 Xpos=[0,0,0,0,0,0,0,0,0,0]
@@ -769,8 +770,11 @@ for i in range(0,len(prob)):
 print("normalize probability: ")
 
 print(normalizedproduct)
+txt=random.choice(prob)
+DATAencrypt=''.join(format(ord(char), '08b') for char in txt)
+print(DATAencrypt)
 print()
-
+print()
 
 print()
 print()
