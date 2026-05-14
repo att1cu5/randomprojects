@@ -1,161 +1,5 @@
 import random
-listofdensity=[0,0,0,0,0,0,0,0,0,0]
-probalityamplitude=[0,0,0,0,0,0,0,0,0,0]
-Xpos=[0,0,0,0,0,0,0,0,0,0]
-Ypos=[0,0,0,0,0,0,0,0,0,0]
-angle=[0,0,0,0,0,0,0,0,0,0]
-magnitude=[0,0,0,0,0,0,0,0,0,0]
-prob=[0,0,0,0,0,0,0,0,0,0]
-per=[0,0,0,0,0,0,0,0,0,0]
-giol=10
-def jk(g,kl,a,b):
-    return (g**4*(180*kl))/((b-a)**5)
-for idf in range(0,giol):
-    #LENGTH=float(input("What is the length of the box: "))
-    LENGTH=32
-    Biasofdown=0   
-    Biasofup=0
-    LOP=0
-    cv=0
-    cvA=0
-    cvB=0
-    Biasofnothing=0
-    Cspeed=3.00*10**8
-    #Vfreq=float(input("What is the frequency of the photon: "))
-    Vfreq=32
-    Lambdas=Cspeed/Vfreq
-    
-    
-    def simpsons_quad(func, a, b, n):
-        import numpy as np
-        """
-        Approximates the integral of func from a to b using Composite Simpson's Rule.
-        Returns: (result, estimated_error)
-        """
-        if n % 2 != 0:
-            n += 1  # n must be even for Simpson's Rule
-        
-        x = np.linspace(a, b, n + 1)
-        y = func(x)
-        dx = (b - a) / n
-        
-        # Simpson's Rule Formula: (dx/3) * [f(x0) + 4*sum(f_odd) + 2*sum(f_even) + f(xn)]
-        result = (dx / 3) * (y[0] + y[-1] + 
-                             4 * np.sum(y[1:-1:2]) + 
-                             2 * np.sum(y[2:-2:2]))
-        
-        # Simple error estimation comparing n and n/2 steps
-        result_half = (dx * 2 / 3) * (y[0] + y[-1] + 
-                                      4 * np.sum(y[2:-2:4]) + 
-                                      2 * np.sum(y[4:-4:4])) if n >= 4 else 0
-        error = abs(result - result_half)
-        
-        return result, error
-        
-        
-        # Example: PDF function (e.g., Normal Distribution)
-        
-    def pdf(x):
-            import numpy as np
-            return (1 / np.sqrt(2 * np.pi)) * np.exp(-0.5 * x**2)
-        
-      
-    from decimal import Decimal, getcontext
-    
-    def get_tiny_square_string(valueA,valueB,op):
-        # 1. Set precision high enough to capture the result
-        getcontext().prec = 50
-        
-        # 2. Convert input to Decimal and calculate
-        # (Works if value is already a string or a Decimal object)
-        if(op==1):
-            result = Decimal(str(valueA)) * Decimal(str(valueB))
-            
-        # 3. Format as a string in scientific notation
-            return f"{result:E}"
-        if(op==2):
-            result = Decimal(str(valueA)) + Decimal(str(valueB)) 
-        
-        # 3. Format as a string in scientific notation
-            return f"{result:E}"
-        if(op==3):
-            result = Decimal(str(valueA)) - Decimal(str(valueB)) 
-        
-        # 3. Format as a string in scientific notation
-            return f"{result:E}"
-        if(op==4):
-            result = Decimal(str(valueA)) / Decimal(str(valueB))
-        
-        # 3. Format as a string in scientific notation
-            return f"{result:E}"  
-        if(op==5):
-            
-            result = pow(Decimal(str(valueA)),Decimal(str(valueB)))
-            return f"{result:E}"
-        if(op==6):
-            
-            result = abs(Decimal(str(valueA)))
-            
-        # 3. Format as a string in scientific notation
-            return f"{result:E}"  
-    def randomG(a,c,limit,seed):
-        return (a*seed+c)%limit
-    def fgh(uoijd,lijk,urei):
-        return uoijd
-    DOWNLIST=[0]
-    UPLIST=[0]
-    NOLIST=[0]
-    for i in range(0,giol):  
-        spinDOWN=0
-        spinUP=0
-        nothing=0
-        DATA=[0]
-    
-        for i in range(0,1):
-            DATA[i]=DATA.insert(i,0)
-            DOWNLIST[i]=DOWNLIST.insert(i,0)
-            UPLIST[i]=UPLIST.insert(i,0)
-            NOLIST[i]=NOLIST.insert(i,0)
-        for ikol in range(0,2):
-        
-        
-        
-        
-            import math
-            import time
-            #import random
-            start = time.perf_counter()
-            Astart = time.process_time()
-            avgchangeinpercentone=0
-            avgchangeinpercenttwo=0
-            rateon=0
-            P=0
-            rateoff=0
-            ratei=0
-            weightA=0
-            weightB=0
-            avgpositivedisplacement=0
-            avgnegativedisplacement=0
-            avg=[0]
-            klo=[0]
-            K=[0]
-            for i in range(1,33):
-                klo[i]=klo.insert(i,0)
-            for i in range(1,33):
-                K[i]=K.insert(i,0)
-            
-            
-            
-            
-            for i in range(1,35):
-                avg[i]=avg.insert(i,0)
-            def O(re,ty,ui,ok,O):
-                return re*(O**ty)+(ui*O)+ok
-            
-            
-            
-            
-            def m(LR,IVA,IVB,WVA,WVB,WVC,WVD,HB):
+def m(LR,IVA,IVB,WVA,WVB,WVC,WVD,HB):
                 import math
                 import re
                 import numpy as np
@@ -325,6 +169,163 @@ for idf in range(0,giol):
               
                 #print("state one: ",ProbA*100,"%","state two: ",ProbB*100,"%")
                 return [ProbA*100,ProbB*100]
+listofdensity=[0,0,0,0,0,0,0,0,0,0]
+probalityamplitude=[0,0,0,0,0,0,0,0,0,0]
+Xpos=[0,0,0,0,0,0,0,0,0,0]
+Ypos=[0,0,0,0,0,0,0,0,0,0]
+angle=[0,0,0,0,0,0,0,0,0,0]
+magnitude=[0,0,0,0,0,0,0,0,0,0]
+prob=[0,0,0,0,0,0,0,0,0,0]
+per=[0,0,0,0,0,0,0,0,0,0]
+giol=10
+def jk(g,kl,a,b):
+    return (g**4*(180*kl))/((b-a)**5)
+for idf in range(0,giol):
+    #LENGTH=float(input("What is the length of the box: "))
+    LENGTH=32
+    Biasofdown=0   
+    Biasofup=0
+    LOP=0
+    cv=0
+    cvA=0
+    cvB=0
+    Biasofnothing=0
+    Cspeed=3.00*10**8
+    #Vfreq=float(input("What is the frequency of the photon: "))
+    Vfreq=32
+    Lambdas=Cspeed/Vfreq
+    
+    
+    def simpsons_quad(func, a, b, n):
+        import numpy as np
+        """
+        Approximates the integral of func from a to b using Composite Simpson's Rule.
+        Returns: (result, estimated_error)
+        """
+        if n % 2 != 0:
+            n += 1  # n must be even for Simpson's Rule
+        
+        x = np.linspace(a, b, n + 1)
+        y = func(x)
+        dx = (b - a) / n
+        
+        # Simpson's Rule Formula: (dx/3) * [f(x0) + 4*sum(f_odd) + 2*sum(f_even) + f(xn)]
+        result = (dx / 3) * (y[0] + y[-1] + 
+                             4 * np.sum(y[1:-1:2]) + 
+                             2 * np.sum(y[2:-2:2]))
+        
+        # Simple error estimation comparing n and n/2 steps
+        result_half = (dx * 2 / 3) * (y[0] + y[-1] + 
+                                      4 * np.sum(y[2:-2:4]) + 
+                                      2 * np.sum(y[4:-4:4])) if n >= 4 else 0
+        error = abs(result - result_half)
+        
+        return result, error
+        
+        
+        # Example: PDF function (e.g., Normal Distribution)
+        
+    def pdf(x):
+            import numpy as np
+            return (1 / np.sqrt(2 * np.pi)) * np.exp(-0.5 * x**2)
+        
+      
+    from decimal import Decimal, getcontext
+    
+    def get_tiny_square_string(valueA,valueB,op):
+        # 1. Set precision high enough to capture the result
+        getcontext().prec = 50
+        
+        # 2. Convert input to Decimal and calculate
+        # (Works if value is already a string or a Decimal object)
+        if(op==1):
+            result = Decimal(str(valueA)) * Decimal(str(valueB))
+            
+        # 3. Format as a string in scientific notation
+            return f"{result:E}"
+        if(op==2):
+            result = Decimal(str(valueA)) + Decimal(str(valueB)) 
+        
+        # 3. Format as a string in scientific notation
+            return f"{result:E}"
+        if(op==3):
+            result = Decimal(str(valueA)) - Decimal(str(valueB)) 
+        
+        # 3. Format as a string in scientific notation
+            return f"{result:E}"
+        if(op==4):
+            result = Decimal(str(valueA)) / Decimal(str(valueB))
+        
+        # 3. Format as a string in scientific notation
+            return f"{result:E}"  
+        if(op==5):
+            
+            result = pow(Decimal(str(valueA)),Decimal(str(valueB)))
+            return f"{result:E}"
+        if(op==6):
+            
+            result = abs(Decimal(str(valueA)))
+            
+        # 3. Format as a string in scientific notation
+            return f"{result:E}"  
+    def randomG(a,c,limit,seed):
+        return (a*seed+c)%limit
+    def fgh(uoijd,lijk,urei):
+        return uoijd
+    DOWNLIST=[0]
+    UPLIST=[0]
+    NOLIST=[0]
+    for i in range(0,giol):  
+        spinDOWN=0
+        spinUP=0
+        nothing=0
+        DATA=[0]
+    
+        for i in range(0,1):
+            DATA[i]=DATA.insert(i,0)
+            DOWNLIST[i]=DOWNLIST.insert(i,0)
+            UPLIST[i]=UPLIST.insert(i,0)
+            NOLIST[i]=NOLIST.insert(i,0)
+        for ikol in range(0,2):
+        
+        
+        
+        
+            import math
+            import time
+            #import random
+            start = time.perf_counter()
+            Astart = time.process_time()
+            avgchangeinpercentone=0
+            avgchangeinpercenttwo=0
+            rateon=0
+            P=0
+            rateoff=0
+            ratei=0
+            weightA=0
+            weightB=0
+            avgpositivedisplacement=0
+            avgnegativedisplacement=0
+            avg=[0]
+            klo=[0]
+            K=[0]
+            for i in range(1,33):
+                klo[i]=klo.insert(i,0)
+            for i in range(1,33):
+                K[i]=K.insert(i,0)
+            
+            
+            
+            
+            for i in range(1,35):
+                avg[i]=avg.insert(i,0)
+            def O(re,ty,ui,ok,O):
+                return re*(O**ty)+(ui*O)+ok
+            
+            
+            
+            
+
             accuracy=0
             accuracya=0
             accuracyb=0
