@@ -791,14 +791,27 @@ def MAIN():
     
     lstate=159508576913954845180612982391718185118169205577160977874080339596104103895262091379231784642186123052583829943829114233517318692221751 
     Astate=139633821288291447314342521502729566484678743216628016127416602976725176179183876897984161943236839463687991727983992051777723228894007
-    if(key==lstate and keyA==Astate):
-        print("welcome to the site you got the right ids")
-        return True
-    else:
-        print("you got the wrong ids you will be kicked from the site")
-        return False
+    bhjl=[[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
+    Xposition=0
+    Yposition=0
+    if(key==lstate):
+        Xposition=1
+    if(key>lstate):
+        Xposition=2
+    if(key<lstate):
+        Xposition=0
+    if(keyA==Astate):
+        Yposition=1
+    if(keyA>Astate):
+        Yposition=2
+    if(keyA<Astate):
+        Yposition=0
+    bhjl[Xposition][Yposition]=1
+    bhjl[Yposition][Xposition]=1
+    return bhjl
+    
+print(MAIN())   
 
-MAIN()
 
 
 
