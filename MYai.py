@@ -759,9 +759,9 @@ finalsumofprobA=get_tiny_square_string(ilkope,ilko,2)
 print("total sum of normalized :")
 print(finalsumofprobA)
 normalizedproduct=get_tiny_square_string(wavefunction,N,1)
-print("Probability of first item is equal to: ")
-hklli=prob[0]
-print(get_tiny_square_string(hklli,finalsumofprobA,4))
+for i in range(0,len(prob)):
+    print("Probability of "+i+" item is equal to: ")
+    print(get_tiny_square_string(prob[i],finalsumofprobA,4))
 print("normalize probability: ")
 
 print(normalizedproduct)
