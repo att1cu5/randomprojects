@@ -791,7 +791,7 @@ def MAIN():
     
     lstate=159508576913954845180612982391718185118169205577160977874080339596104103895262091379231784642186123052583829943829114233517318692221751 
     Astate=139633821288291447314342521502729566484678743216628016127416602976725176179183876897984161943236839463687991727983992051777723228894007
-    bhjl=[[0,0,0],[0,0,0],[0,0,0],[0,0,0]]
+    bhjl=[[0,0,0],[0,0,0],[0,0,0]]
     Xposition=0
     Yposition=0
     if(key==lstate):
@@ -808,7 +808,15 @@ def MAIN():
         Yposition=0
     bhjl[Xposition][Yposition]=1
     bhjl[Yposition][Xposition]=1
-    return bhjl
+    vgjhk=bhjl[0][0]+bhjl[0][1]+bhjl[0][2]
+    jklo=bhjl[1][0]+bhjl[1][1]+bhjl[1][2]
+    lople=bhjl[2][0]+bhjl[2][1]+bhjl[2][2]
+    opl=bin(vgjhk+jklo+lople)
+    vgjhk=bhjl[0][0]+bhjl[1][0]+bhjl[2][0]
+    jklo=bhjl[0][1]+bhjl[1][1]+bhjl[2][1]
+    lople=bhjl[0][2]+bhjl[1][2]+bhjl[2][2]
+    ople=bin(vgjhk+jklo+lople)
+    return ople,opl
     
 print(MAIN())   
 
