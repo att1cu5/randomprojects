@@ -770,24 +770,30 @@ for i in range(0,len(prob)):
 #print("normalize probability: ")
 
 #print(normalizedproduct)
+
 txt=random.choice(prob)
 DATAencrypt=''.join(format(ord(char), '08b') for char in txt)
+
+
+
 #print("key")
 #print(DATAencrypt)
 key=int(DATAencrypt,2)
+
 txtA=random.choice(prob)
-DATAencryptA=''.join(format(ord(char), '08b') for char in txt)
+DATAencryptA=''.join(format(ord(char), '08b') for char in txtA)
 #print("key")
 #print(DATAencrypt)
+#print(DATAencrypt)
 keyA=int(DATAencryptA,2)
-
-while(0==0):
-    if(keyA==key):
-        print("your ids match")
-        break
-    else:
-        print("your going to get kicked out of the site.")
-        break
+print(keyA)
+print(key)
+lstate=159508576913954845180612982391718185118169205577160977874080339596104103895262091379231784642186123052583829943829114233517318692221751 
+Astate=139633821288291447314342521502729566484678743216628016127416602976725176179183876897984161943236839463687991727983992051777723228894007
+if(key==lstate and keyA==Astate):
+    print("welcome to the site you got the right ids")
+else:
+    print("you got the wrong ids you will be kicked from the site")
 print()
 print()
 print()
