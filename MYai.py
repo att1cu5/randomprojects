@@ -793,10 +793,15 @@ def MAIN():
     Astate=139633821288291447314342521502729566484678743216628016127416602976725176179183876897984161943236839463687991727983992051777723228894007
     if(key==lstate and keyA==Astate):
         print("welcome to the site you got the right ids")
+        return True
     else:
         print("you got the wrong ids you will be kicked from the site")
-    print()
-    print()
-    print()
-    print()
+        return False
+
 MAIN()
+
+
+
+
+
+
