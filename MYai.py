@@ -760,7 +760,8 @@ print("total sum of normalized :")
 print(finalsumofprobA)
 normalizedproduct=get_tiny_square_string(wavefunction,N,1)
 print("Probability of first item is equal to: ")
-print(get_tiny_square_string(prob[0],finalsumofprobA,5))
+hklli=prob[0]
+print(get_tiny_square_string(hklli,finalsumofprobA,4))
 print("normalize probability: ")
 
 print(normalizedproduct)
