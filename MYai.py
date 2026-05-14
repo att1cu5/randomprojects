@@ -775,15 +775,19 @@ DATAencrypt=''.join(format(ord(char), '08b') for char in txt)
 #print("key")
 #print(DATAencrypt)
 key=int(DATAencrypt,2)
-print(key)
+txtA=random.choice(prob)
+DATAencryptA=''.join(format(ord(char), '08b') for char in txt)
+#print("key")
+#print(DATAencrypt)
+keyA=int(DATAencryptA,2)
 
-if(key%2==0):
-    print("right key")
-else:
-    print("wrong key")
-print()
-print()
-
+while(0==0):
+    if(keyA==key):
+        print("your ids match")
+        break
+    else:
+        print("your going to get kicked out of the site.")
+        break
 print()
 print()
 print()
