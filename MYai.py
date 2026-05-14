@@ -62,7 +62,7 @@ for idf in range(0,giol):
     
     def get_tiny_square_string(valueA,valueB,op):
         # 1. Set precision high enough to capture the result
-        getcontext().prec = 5
+        getcontext().prec = 50
         
         # 2. Convert input to Decimal and calculate
         # (Works if value is already a string or a Decimal object)
@@ -758,10 +758,11 @@ ilkope=get_tiny_square_string(lopej,oper,2)
 finalsumofprobA=get_tiny_square_string(ilkope,ilko,2)
 print("total sum of normalized :")
 print(finalsumofprobA)
+normalizedproduct=get_tiny_square_string(wavefunction,N,1)
 print("Probability of first item is equal to: ")
 print(get_tiny_square_string(prob[0],finalsumofprobA,5))
 print("normalize probability: ")
-normalizedproduct=get_tiny_square_string(wavefunction,N,1)
+
 print(normalizedproduct)
 print()
 
