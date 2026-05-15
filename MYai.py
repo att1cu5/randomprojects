@@ -812,9 +812,9 @@ def MAIN():
     return bhjl
     
 mjk=MAIN()  
-print(mjk)
-
-
+print(mjk[0])
+print(mjk[1])
+print(mjk[2])
 
 
 
