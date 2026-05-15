@@ -808,17 +808,11 @@ def MAIN():
         Yposition=0
     bhjl[Xposition][Yposition]=1
     bhjl[Yposition][Xposition]=1
-    vgjhk=bhjl[0][0]+bhjl[0][1]+bhjl[0][2]
-    jklo=bhjl[1][0]+bhjl[1][1]+bhjl[1][2]
-    lople=bhjl[2][0]+bhjl[2][1]+bhjl[2][2]
-    opl=bin(vgjhk+jklo+lople)
-    vgjhk=bhjl[0][0]+bhjl[1][0]+bhjl[2][0]
-    jklo=bhjl[0][1]+bhjl[1][1]+bhjl[2][1]
-    lople=bhjl[0][2]+bhjl[1][2]+bhjl[2][2]
-    ople=bin(vgjhk+jklo+lople)
-    return ople,opl
+
+    return bhjl
     
-print(MAIN())   
+mjk=MAIN()  
+print(mjk)
 
 
 
