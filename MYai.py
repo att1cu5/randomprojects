@@ -818,7 +818,7 @@ mjk=MAIN()
 flattened_list = [bit for row in mjk for bit in row]
 #print(flattened_list)
 bit_string = "".join(map(str, flattened_list))
-print(int(bit_string,2))
+print(bit_string)
 
 
 
