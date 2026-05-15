@@ -812,9 +812,13 @@ def MAIN():
     return bhjl
     
 mjk=MAIN()  
-print(mjk[0])
-print(mjk[1])
-print(mjk[2])
+#print(mjk[0])
+#print(mjk[1])
+#print(mjk[2])
+flattened_list = [bit for row in mjk for bit in row]
+#print(flattened_list)
+bit_string = "".join(map(str, flattened_list))
+print(int(bit_string,2))
 
 
 
