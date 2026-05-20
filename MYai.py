@@ -892,17 +892,23 @@ for i in range(0,loaded):
     #print("Y: ",Y)
     binary_strY = ' '.join(format(ord(c), '08b') for c in Y)
     int_valuesY = [int(binary, 2) for binary in binary_strY.split()]
-    #current_state = "off"
+    current_state = '0'
     print(f"Start: {current_state}")
     matrixoutA=[]
     matrixoutB=[]
-    for ik in range(0,len(int_valuesY)):
-        matrixoutB.append(int_valuesY[ik]/sum(int_valuesY))
-    for ik in range(0,len(int_valuesY)):
-        matrixoutA.append(int_valuesX[ik]/sum(int_valuesX))
+    if(len(int_valuesY)<len(int_valuesX)):
+        for ik in range(0,len(int_valuesY)):
+            matrixoutB.append(int_valuesY[ik]/sum(int_valuesY))
+        for ik in range(0,len(int_valuesY)):
+            matrixoutA.append(int_valuesX[ik]/sum(int_valuesX))
+    else:
+        for ik in range(0,len(int_valuesX)):
+            matrixoutB.append(int_valuesY[ik]/sum(int_valuesY))
+        for ik in range(0,len(int_valuesX)):
+            matrixoutA.append(int_valuesX[ik]/sum(int_valuesX))
     matrix_out_list=[]
     #print("Y",binary_strY,"X",binary_strX)
-    print(len(int_valuesY))
+    #print(len(int_valuesY))
     states=[]
     for i in range(0,len(int_valuesY)):
         states.append(str(i))
