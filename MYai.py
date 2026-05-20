@@ -892,7 +892,7 @@ for i in range(0,loaded):
     binary_strY = ' '.join(format(ord(c), '08b') for c in Y)
     Xa=int(binary_strX.replace(" ", ""), 2)
     Ya=int(binary_strY.replace(" ", ""), 2)
-    print(Ya/Xa)
+    print(float(Ya/Xa))
     if(round((int(bit_string,2)/256)*100)==100):
         print("state sucessfully reached!")
         break
