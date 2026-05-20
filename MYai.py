@@ -885,14 +885,18 @@ for i in range(0,loaded):
     magprob=get_tiny_square_string(MagnitudeA,probalityweight,1)
     X=get_tiny_square_string(magprob,get_tiny_square_string(angleA,0,8),1)
     Y=get_tiny_square_string(magprob,get_tiny_square_string(angleA,0,7),1)
-    print("X: ",X)
+    #print("X: ",X)
     binary_strX = ' '.join(format(ord(c), '08b') for c in X)
     
-    print("Y: ",Y)
+    #print("Y: ",Y)
     binary_strY = ' '.join(format(ord(c), '08b') for c in Y)
+    
     Xa=int(binary_strX.replace(" ", ""), 2)
     Ya=int(binary_strY.replace(" ", ""), 2)
-    print(float(Ya/Xa))
+    Slope=float(Ya/Xa)
+    #print("X: ",Xa)
+    #print("Y: ",Ya)
+    #print("slope: ",float(Ya/Xa))
     if(round((int(bit_string,2)/256)*100)==100):
         print("state sucessfully reached!")
         break
