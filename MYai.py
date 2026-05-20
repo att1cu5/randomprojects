@@ -886,7 +886,12 @@ for i in range(0,loaded):
     X=get_tiny_square_string(magprob,get_tiny_square_string(angleA,0,8),1)
     Y=get_tiny_square_string(magprob,get_tiny_square_string(angleA,0,7),1)
     print("X: ",X)
+    binary_strX = ' '.join(format(ord(c), '08b') for c in X)
+    
     print("Y: ",Y)
+    binary_strY = ' '.join(format(ord(c), '08b') for c in Y)
+    print(binary_strX)
+    print(binary_strY)
     if(round((int(bit_string,2)/256)*100)==100):
         print("state sucessfully reached!")
         break
