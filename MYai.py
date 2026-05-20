@@ -894,9 +894,9 @@ for i in range(0,loaded):
     Xa=int(binary_strX.replace(" ", ""), 2)
     Ya=int(binary_strY.replace(" ", ""), 2)
     Slope=float(Ya/Xa)
-    #print("X: ",Xa)
-    #print("Y: ",Ya)
-    #print("slope: ",float(Ya/Xa))
+    print("X: ",Xa)
+    print("Y: ",Ya)
+    print("slope: ",float(Ya/Xa))
     if(round((int(bit_string,2)/256)*100)==100):
         print("state sucessfully reached!")
         break
