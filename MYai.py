@@ -885,7 +885,8 @@ for i in range(0,loaded):
     magprob=get_tiny_square_string(MagnitudeA,probalityweight,1)
     X=get_tiny_square_string(magprob,get_tiny_square_string(angleA,0,8),1)
     Y=get_tiny_square_string(magprob,get_tiny_square_string(angleA,0,7),1)
-    print(X,Y)
+    print("X: ",X)
+    print("Y: ",Y)
     if(round((int(bit_string,2)/256)*100)==100):
         print("state sucessfully reached!")
         break
