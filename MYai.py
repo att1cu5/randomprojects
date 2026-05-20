@@ -823,9 +823,9 @@ for i in range(0,loaded):
     bit_string = "".join(map(str, flattened_list))
     #print("data in bin: ",bit_string)
     #print("data in dec: ",int(bit_string,2))
-    print("loaded : ",round((int(bit_string,2)/256)*100),"%")
+    print("state : ",round((int(bit_string,2)/256)*100))
     if(round((int(bit_string,2)/256)*100)==100):
-        print("loaded sucessfully!")
+        print("state sucessfully reached!")
         break
 
 
