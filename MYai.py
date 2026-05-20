@@ -813,7 +813,58 @@ def MAIN():
     #print("key: ",key)
     
     return bhjl,angle,magnitude
-loaded=10
+from decimal import Decimal, getcontext
+        
+def get_tiny_square_string(valueA,valueB,op):
+            # 1. Set precision high enough to capture the result
+            import math
+            getcontext().prec = 50
+            
+            # 2. Convert input to Decimal and calculate
+            # (Works if value is already a string or a Decimal object)
+            if(op==1):
+                result = Decimal(str(valueA)) * Decimal(str(valueB))
+                
+            # 3. Format as a string in scientific notation
+                return f"{result:E}"
+            if(op==2):
+                result = Decimal(str(valueA)) + Decimal(str(valueB)) 
+            
+            # 3. Format as a string in scientific notation
+                return f"{result:E}"
+            if(op==3):
+                result = Decimal(str(valueA)) - Decimal(str(valueB)) 
+            
+            # 3. Format as a string in scientific notation
+                return f"{result:E}"
+            if(op==4):
+                result = Decimal(str(valueA)) / Decimal(str(valueB))
+            
+            # 3. Format as a string in scientific notation
+                return f"{result:E}"  
+            if(op==5):
+                
+                result = pow(Decimal(str(valueA)),Decimal(str(valueB)))
+                return f"{result:E}"
+            if(op==6):
+                
+                result = abs(Decimal(str(valueA)))
+                
+            # 3. Format as a string in scientific notation
+                return f"{result:E}"  
+            if(op==7):
+                
+                result = math.sin(Decimal(str(valueA)))
+                
+            # 3. Format as a string in scientific notation
+                return f"{result:E}"  
+            if(op==8):
+                
+                result = math.cos(Decimal(str(valueA)))
+                
+            # 3. Format as a string in scientific notation
+                return f"{result:E}"  
+loaded=9
 for i in range(0,loaded):
     
     mjk,klopio,oplut=MAIN()
@@ -822,11 +873,19 @@ for i in range(0,loaded):
     #print(mjk[2])
     
     flattened_list = [bit for row in mjk for bit in row]
+    
     #print(flattened_list)
     bit_string = "".join(map(str, flattened_list))
     #print("data in bin: ",bit_string)
     #print("data in dec: ",int(bit_string,2))
     print("state : ",round((int(bit_string,2)/256)*100))
+    probalityweight=(int(bit_string,2)/256)/100
+    MagnitudeA=klopio[i]
+    angleA=oplut[i]
+    magprob=get_tiny_square_string(MagnitudeA,probalityweight,1)
+    X=get_tiny_square_string(magprob,get_tiny_square_string(angleA,0,8),1)
+    Y=get_tiny_square_string(magprob,get_tiny_square_string(angleA,0,7),1)
+    print(X,Y)
     if(round((int(bit_string,2)/256)*100)==100):
         print("state sucessfully reached!")
         break
