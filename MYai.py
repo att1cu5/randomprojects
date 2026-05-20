@@ -925,9 +925,9 @@ for i in range(0,loaded):
           else:
             matrix_out_list.append(matrixoutB)
 
-
+    length=len(matrix_out_list)
     transition_matrix = {states[i]: matrix_out_list[i] for i in range(len(states))}
-    for day in range(5):
+    for day in range(len(length)):
     # Choose the next state based on the current state's probabilities
         next_state = random.choices(states, weights=transition_matrix[current_state])[0]
         print(f"term {day + 1}: {next_state}")
