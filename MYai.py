@@ -808,17 +808,27 @@ def MAIN():
         Yposition=0
     bhjl[Xposition][Yposition]=1
     bhjl[Yposition][Xposition]=1
-
-    return bhjl
     
-mjk=MAIN()  
-#print(mjk[0])
-#print(mjk[1])
-#print(mjk[2])
-flattened_list = [bit for row in mjk for bit in row]
-#print(flattened_list)
-bit_string = "".join(map(str, flattened_list))
-print(bit_string)
+    #print("keyA: ",keyA)
+    #print("key: ",key)
+    return bhjl
+loaded=10
+for i in range(0,loaded):  
+    mjk=MAIN()  
+    #print(mjk[0])
+    #print(mjk[1])
+    #print(mjk[2])
+    flattened_list = [bit for row in mjk for bit in row]
+    #print(flattened_list)
+    bit_string = "".join(map(str, flattened_list))
+    #print("data in bin: ",bit_string)
+    #print("data in dec: ",int(bit_string,2))
+    print("loaded : ",round((int(bit_string,2)/256)*100),"%")
+    if(round((int(bit_string,2)/256)*100)==100):
+        print("loaded sucessfully!")
+        break
+
+
 
 
 
