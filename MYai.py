@@ -865,6 +865,7 @@ def get_tiny_square_string(valueA,valueB,op):
             # 3. Format as a string in scientific notation
                 return f"{result:E}"  
 loaded=9
+States=["on","off"]
 for i in range(0,loaded):
     
     mjk,klopio,oplut=MAIN()
@@ -878,7 +879,7 @@ for i in range(0,loaded):
     bit_string = "".join(map(str, flattened_list))
     #print("data in bin: ",bit_string)
     #print("data in dec: ",int(bit_string,2))
-    print("state : ",round((int(bit_string,2)/256)*100))
+    #print("state : ",round((int(bit_string,2)/256)*100))
     probalityweight=(int(bit_string,2)/256)/100
     MagnitudeA=klopio[i]
     angleA=oplut[i]
@@ -887,11 +888,22 @@ for i in range(0,loaded):
     Y=get_tiny_square_string(magprob,get_tiny_square_string(angleA,0,7),1)
     #print("X: ",X)
     binary_strX = ' '.join(format(ord(c), '08b') for c in X)
-    
+    int_valuesX = [int(binary, 2) for binary in binary_strX.split()]
     #print("Y: ",Y)
     binary_strY = ' '.join(format(ord(c), '08b') for c in Y)
+    int_valuesY = [int(binary, 2) for binary in binary_strY.split()]
+    matrixoutA=[]
+    matrixoutB=[]
+    for ik in range(0,len(int_valuesY)):
+        matrixoutB.append(int_valuesY[ik]/sum(int_valuesY))
+    for ik in range(0,len(int_valuesX)):
+        matrixoutA.append(int_valuesX[ik]/sum(int_valuesX))
+    #print("Y",binary_strY,"X",binary_strX)
+    transition_matrix = {
+        "on": matrixoutA,
+        "off": matrixoutB
+    }
     
-
 
     
     if(round((int(bit_string,2)/256)*100)==100):
