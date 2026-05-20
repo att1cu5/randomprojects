@@ -896,27 +896,36 @@ for i in range(0,loaded):
     print(f"Start: {current_state}")
     matrixoutA=[]
     matrixoutB=[]
+    matrix_out_list=[]
+    #print("Y",binary_strY,"X",binary_strX)
+    #print(len(int_valuesY))
+    states=[]
     if(len(int_valuesY)<len(int_valuesX)):
         for ik in range(0,len(int_valuesY)):
             matrixoutB.append(int_valuesY[ik]/sum(int_valuesY))
         for ik in range(0,len(int_valuesY)):
             matrixoutA.append(int_valuesX[ik]/sum(int_valuesX))
+        for i in range(0,len(int_valuesY)):
+          states.append(str(i))
+        for i in range(0,len(int_valuesY)):
+          if(i%2==0):
+            matrix_out_list.append(matrixoutA)
+          else:
+            matrix_out_list.append(matrixoutB)
     else:
         for ik in range(0,len(int_valuesX)):
             matrixoutB.append(int_valuesY[ik]/sum(int_valuesY))
         for ik in range(0,len(int_valuesX)):
             matrixoutA.append(int_valuesX[ik]/sum(int_valuesX))
-    matrix_out_list=[]
-    #print("Y",binary_strY,"X",binary_strX)
-    #print(len(int_valuesY))
-    states=[]
-    for i in range(0,len(int_valuesY)):
-        states.append(str(i))
-    for i in range(0,len(int_valuesY)):
-        if(i%2==0):
+        for i in range(0,len(int_valuesX)):
+          states.append(str(i))
+        for i in range(0,len(int_valuesX)):
+          if(i%2==0):
             matrix_out_list.append(matrixoutA)
-        else:
+          else:
             matrix_out_list.append(matrixoutB)
+
+
     transition_matrix = {states[i]: matrix_out_list[i] for i in range(len(states))}
     for day in range(5):
     # Choose the next state based on the current state's probabilities
