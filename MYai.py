@@ -1,5 +1,6 @@
 control=0
 import random
+import math
 import numpy as np
 def calculate_steady_state(matrix):
     
@@ -927,6 +928,7 @@ for i in range(0,loaded):
     print(f"Start: {current_state}")
     matrixoutA=[]
     matrixoutB=[]
+    matrixoutC=[]
     matrix_out_list=[]
     #print("Y",binary_strY,"X",binary_strX)
     #print(len(int_valuesY))
@@ -936,26 +938,33 @@ for i in range(0,loaded):
             matrixoutB.append(int_valuesY[ik]/sum(int_valuesY))
         for ik in range(0,len(int_valuesY)):
             matrixoutA.append(int_valuesX[ik]/sum(int_valuesX))
+        for ik in range(0,len(int_valuesY)):
+            matrixoutC.append(math.sqrt(math.pow(int_valuesX[ik],2)+math.pow(int_valuesY[ik],2)))
         for i in range(0,len(int_valuesY)):
           states.append(str(i))
         for i in range(0,len(int_valuesY)):
-          if(i%2==0):
+          if(i%3==0):
             matrix_out_list.append(matrixoutA)
-          else:
+          if(i%3==1):
             matrix_out_list.append(matrixoutB)
+          if(i%3==2):
+            matrix_out_list.append(matrixoutC)
     else:
         for ik in range(0,len(int_valuesX)):
             matrixoutB.append(int_valuesY[ik]/sum(int_valuesY))
         for ik in range(0,len(int_valuesX)):
             matrixoutA.append(int_valuesX[ik]/sum(int_valuesX))
+        for ik in range(0,len(int_valuesX)):
+            matrixoutC.append(math.sqrt(math.pow(int_valuesX[ik],2)+math.pow(int_valuesY[ik],2)))
         for i in range(0,len(int_valuesX)):
           states.append(str(i))
         for i in range(0,len(int_valuesX)):
-          if(i%2==0):
+          if(i%3==0):
             matrix_out_list.append(matrixoutA)
-          else:
+          if(i%3==1):
             matrix_out_list.append(matrixoutB)
-
+          if(i%3==2):
+            matrix_out_list.append(matrixoutC)
     length=len(matrix_out_list)
     
     transition_matrix = {states[i]: matrix_out_list[i] for i in range(len(states))}
