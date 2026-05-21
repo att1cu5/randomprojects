@@ -927,13 +927,18 @@ for i in range(0,loaded):
 
     length=len(matrix_out_list)
     transition_matrix = {states[i]: matrix_out_list[i] for i in range(len(states))}
-    print("matrix selected: ",transition_matrix)
+    #print("matrix selected: ",transition_matrix)
     for day in range(length):
     # Choose the next state based on the current state's probabilities
+        
         next_state = random.choices(states, weights=transition_matrix[current_state])[0]
+        hlkop=int(next_state)
+        #print(hlkop)
+        print(transition_matrix[current_state][hlkop])
         print(f"term {day + 1}: {next_state}")
         current_state = next_state
-
+        print()
+        
     
     #if(round((int(bit_string,2)/256)*100)==100):
      #   print("state sucessfully reached!")
