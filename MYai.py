@@ -977,6 +977,10 @@ for i in range(0,loaded):
         #print(hlkop)
         res=calculate_steady_state(matrix_out_list[hlkop])
         print("Steady-State Vector:", res)
+        magnitudeK=0
+        for i in range(0,len(matrix_out_list[hlkop])):
+            magnitudeK+=math.pow(res[i],2)
+        print("Magnitude: ",math.sqrt(magnitudeK))
         #print(transition_matrix[current_state][hlkop])
         print(f"term {day + 1}: {next_state}")
         current_state = next_state
