@@ -1,6 +1,10 @@
 import random
 import math
 import numpy as np
+Marti=[]
+MAtrixOut=[]
+MAtrixOutA=[]
+MAtrixOutB=[]
 def calculate_steady_state(matrix):
     
     """
@@ -976,12 +980,19 @@ for i in range(0,loaded):
         hlkop=int(next_state)
         #print(hlkop)
         res=calculate_steady_state(matrix_out_list[hlkop])
+        
         print("Steady-State Vector:", res)
+        if(i==0):
+            MAtrixOut.append(res)
+        if(i==1):
+            MAtrixOutA.append(res)
+        if(i==2):
+            MAtrixOutB.append(res)    
         #print(transition_matrix[current_state][hlkop])
         print(f"term {day + 1}: {next_state}")
         current_state = next_state
         
-    
+print(MAtrixOut,MAtrixOutA,MAtrixOutB)
     #if(round((int(bit_string,2)/256)*100)==100):
      #   print("state sucessfully reached!")
      #   break
