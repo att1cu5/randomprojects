@@ -1,4 +1,3 @@
-control=0
 import random
 import math
 import numpy as np
@@ -976,7 +975,7 @@ for i in range(0,loaded):
         next_state = random.choices(states, weights=transition_matrix[current_state])[0]
         hlkop=int(next_state)
         #print(hlkop)
-        res=calculate_steady_state(matrix_out_list)
+        res=calculate_steady_state(matrix_out_list[hlkop])
         print("Steady-State Vector:", res)
         #print(transition_matrix[current_state][hlkop])
         print(f"term {day + 1}: {next_state}")
