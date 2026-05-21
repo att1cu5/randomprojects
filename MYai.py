@@ -957,6 +957,7 @@ for i in range(0,loaded):
             matrix_out_list.append(matrixoutB)
 
     length=len(matrix_out_list)
+    
     transition_matrix = {states[i]: matrix_out_list[i] for i in range(len(states))}
     
     #print("matrix selected: ",transition_matrix)
@@ -966,8 +967,8 @@ for i in range(0,loaded):
         next_state = random.choices(states, weights=transition_matrix[current_state])[0]
         hlkop=int(next_state)
         #print(hlkop)
-        #res=calculate_steady_state(P)
-        #print("Steady-State Vector:", res)
+        res=calculate_steady_state(matrix_out_list)
+        print("Steady-State Vector:", res)
         #print(transition_matrix[current_state][hlkop])
         print(f"term {day + 1}: {next_state}")
         current_state = next_state
