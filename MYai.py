@@ -1,4 +1,35 @@
+control=0
 import random
+import numpy as np
+def calculate_steady_state(matrix):
+    
+    """
+    Calculates the long-term equilibrium (steady-state) vector 
+    for a given Markov chain transition matrix.
+    """
+    # Convert input to a NumPy array
+    P = np.array(matrix, dtype=float)
+    
+    # Get the number of states (matrix dimensions)
+    n = P.shape[0]
+    
+    # Transpose P and subtract the Identity matrix: (P^T - I)
+    # This sets up the equation: (P^T - I) * pi = 0
+    Q = P.T - np.eye(n)
+    
+    # Replace the last row with 1s to enforce the sum-to-1 constraint
+    Q[-1] = np.ones(n)
+    
+    # Create target vector: all zeros except the last element which is 1
+    b = np.zeros(n)
+    b[-1] = 1.0
+    
+    # Solve the system of linear equations
+    try:
+        steady_state = np.linalg.solve(Q, b)
+        return steady_state
+    except np.linalg.LinAlgError:
+        raise ValueError("The matrix does not have a unique steady state.")
 def m(LR,IVA,IVB,WVA,WVB,WVC,WVD,HB):
                 import math
                 import re
@@ -934,10 +965,11 @@ for i in range(0,loaded):
         next_state = random.choices(states, weights=transition_matrix[current_state])[0]
         hlkop=int(next_state)
         #print(hlkop)
-        print(transition_matrix[current_state][hlkop])
+        res=calculate_steady_state(transition_matrix)
+        print("Steady-State Vector:", res)
+        #print(transition_matrix[current_state][hlkop])
         print(f"term {day + 1}: {next_state}")
         current_state = next_state
-        print()
         
     
     #if(round((int(bit_string,2)/256)*100)==100):
