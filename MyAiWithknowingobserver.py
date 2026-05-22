@@ -390,12 +390,12 @@ def MAIN():
                     errorrateB=0
                     errorrateA=0
                     for i in range(1,35):
-                        x=m(0.2,0.4,0.23,0.45,0.34,0.67,9,7)*live
-                        avgchangeinpercentone=x[0]
-                        avgchangeinpercenttwo=x[1]
-                        x=m(0.2,0.4,0.23,0.45,0.34,0.67,9,7)*live
-                        avgchangeinpercentone=x[0]-avgchangeinpercentone
-                        avgchangeinpercenttwo=x[1]-avgchangeinpercenttwo
+                        x=m(0.2,0.4,0.23,0.45,0.34,0.67,9,7)
+                        avgchangeinpercentone=x[0]*live
+                        avgchangeinpercenttwo=x[1]*live
+                        x=m(0.2,0.4,0.23,0.45,0.34,0.67,9,7)
+                        avgchangeinpercentone=x[0]-avgchangeinpercentone*live
+                        avgchangeinpercenttwo=x[1]-avgchangeinpercenttwo*live
                     errorrateB=(avgchangeinpercentone/k)
                     errorrateA=(avgchangeinpercenttwo/k)
                 
