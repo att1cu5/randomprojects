@@ -6,6 +6,12 @@ def observerlooked():
     hostname = socket.gethostname()
     local_ip = socket.gethostbyname(hostname)
     
+    digits = [char for char in local_ip if char.isdigit()]
+    for i in range(0,len(digits)):
+        digits[i]=int(digits[i])
+    
+    return digits
+
 def calculate_steady_state(matrix):
     
     """
@@ -900,7 +906,7 @@ def get_tiny_square_string(valueA,valueB,op):
                 
             # 3. Format as a string in scientific notation
                 return f"{result:E}"  
-loaded=3
+loaded=2
 
 for i in range(0,loaded):
     
@@ -994,7 +1000,6 @@ for i in range(0,loaded):
     #if(round((int(bit_string,2)/256)*100)==100):
      #   print("state sucessfully reached!")
      #   break
-
 
 
 
