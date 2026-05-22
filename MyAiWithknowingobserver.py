@@ -1,16 +1,9 @@
 import random
 import math
 import numpy as np
-def observerlooked():
-    import socket
-    hostname = socket.gethostname()
-    local_ip = socket.gethostbyname(hostname)
-    
-    digits = [char for char in local_ip if char.isdigit()]
-    for i in range(0,len(digits)):
-        digits[i]=int(digits[i])
-    
-    return digits
+
+          
+
 
 def calculate_steady_state(matrix):
     
@@ -42,6 +35,7 @@ def calculate_steady_state(matrix):
     except np.linalg.LinAlgError:
         raise ValueError("The matrix does not have a unique steady state.")
 def m(LR,IVA,IVB,WVA,WVB,WVC,WVD,HB):
+
                 import math
                 import re
                 import numpy as np
@@ -212,6 +206,25 @@ def m(LR,IVA,IVB,WVA,WVB,WVC,WVD,HB):
                 #print("state one: ",ProbA*100,"%","state two: ",ProbB*100,"%")
                 return [ProbA*100,ProbB*100]
 def MAIN():
+    import socket
+    hostname = socket.gethostname()
+    local_ip = socket.gethostbyname(hostname)
+    
+    digits = [char for char in local_ip if char.isdigit()]
+    for i in range(0,len(digits)):
+        digits[i]=int(digits[i])
+    live=0
+    for i in range(0,len(digits)):
+        if(digits[i]>0):
+            live*=digits[i]
+    while(0==0):
+        askonobserver=input("do you want to see the results as a observer: ")
+        if(askonobserver=="yes"):
+           live=live
+           break
+        if(askonobserver=="no"):
+           live=1
+           break
     listofdensity=[0,0,0,0,0,0,0,0,0,0]
     probalityamplitude=[0,0,0,0,0,0,0,0,0,0]
     Xpos=[0,0,0,0,0,0,0,0,0,0]
@@ -377,10 +390,10 @@ def MAIN():
                     errorrateB=0
                     errorrateA=0
                     for i in range(1,35):
-                        x=m(0.2,0.4,0.23,0.45,0.34,0.67,9,7)
+                        x=m(0.2,0.4,0.23,0.45,0.34,0.67,9,7)*live
                         avgchangeinpercentone=x[0]
                         avgchangeinpercenttwo=x[1]
-                        x=m(0.2,0.4,0.23,0.45,0.34,0.67,9,7)
+                        x=m(0.2,0.4,0.23,0.45,0.34,0.67,9,7)*live
                         avgchangeinpercentone=x[0]-avgchangeinpercentone
                         avgchangeinpercenttwo=x[1]-avgchangeinpercenttwo
                     errorrateB=(avgchangeinpercentone/k)
@@ -906,7 +919,7 @@ def get_tiny_square_string(valueA,valueB,op):
                 
             # 3. Format as a string in scientific notation
                 return f"{result:E}"  
-loaded=2
+loaded=1
 
 for i in range(0,loaded):
     
