@@ -1,6 +1,11 @@
 import random
 import math
 import numpy as np
+def observerlooked():
+    import socket
+    hostname = socket.gethostname()
+    local_ip = socket.gethostbyname(hostname)
+    
 def calculate_steady_state(matrix):
     
     """
