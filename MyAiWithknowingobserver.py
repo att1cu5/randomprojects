@@ -4,7 +4,9 @@ import numpy as np
 
           
 
-
+MAGnitude=[]
+for i in range(0,5):
+    MAGnitude.append(0)
 def calculate_steady_state(matrix):
     
     """
@@ -1006,9 +1008,10 @@ for i in range(0,loaded):
             magnitudeK+=math.pow(res[i],2)
         print("Magnitude: ",math.sqrt(magnitudeK))
         #print(transition_matrix[current_state][hlkop])
+        MAGnitude[i]=math.sqrt(magnitudeK)
         print(f"term {day + 1}: {next_state}")
         current_state = next_state
-        
+print(MAGnitude)
     
     #if(round((int(bit_string,2)/256)*100)==100):
      #   print("state sucessfully reached!")
