@@ -1018,6 +1018,7 @@ for i in range(0,loaded):
         print(f"term {day + 1}: {next_state}")
         current_state = next_state
 print(MAGnitude)
+print()
 print(resh)    
     #if(round((int(bit_string,2)/256)*100)==100):
      #   print("state sucessfully reached!")
