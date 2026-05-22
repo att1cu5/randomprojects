@@ -324,8 +324,8 @@ def MAIN():
                 
             # 3. Format as a string in scientific notation
                 return f"{result:E}"  
-        def randomG(a,c,limit,seed):
-            return (a*seed+c)%limit
+        def randomG(a,c,limit,seed,kolpoel):
+            return (live*a*seed+c)%limit
         def fgh(uoijd,lijk,urei):
             return uoijd
         DOWNLIST=[0]
@@ -390,10 +390,10 @@ def MAIN():
                     errorrateB=0
                     errorrateA=0
                     for i in range(1,35):
-                        x=m(0.2,0.4,0.23,0.45,0.34,0.67,9,7)*live
+                        x=m(0.2,0.4,0.23,0.45,0.34,0.67,9,7)
                         avgchangeinpercentone=x[0]
                         avgchangeinpercenttwo=x[1]
-                        x=m(0.2,0.4,0.23,0.45,0.34,0.67,9,7)*live
+                        x=m(0.2,0.4,0.23,0.45,0.34,0.67,9,7)
                         avgchangeinpercentone=x[0]-avgchangeinpercentone
                         avgchangeinpercenttwo=x[1]-avgchangeinpercenttwo
                     errorrateB=(avgchangeinpercentone/k)
@@ -430,7 +430,7 @@ def MAIN():
                         
                         import random
                         
-                        ui=randomG(randomG(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-pow(2,32),pow(2,32)),random.uniform(-1,1)),randomG(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-pow(2,32),pow(2,32)),random.uniform(-1,1)),(lo+po+ikl)*100,randomG(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-pow(2,32),pow(2,32)),random.uniform(-1,1)))
+                        ui=randomG(randomG(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-pow(2,32),pow(2,32)),random.uniform(-1,1),live),randomG(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-pow(2,32),pow(2,32)),random.uniform(-1,1),live),(lo+po+ikl)*100,randomG(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-pow(2,32),pow(2,32)),random.uniform(-1,1),live),live)
                         
                       
                       
