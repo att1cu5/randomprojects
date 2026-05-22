@@ -2,8 +2,11 @@ import random
 import math
 import numpy as np
 
-          
+resh=[]   
 
+MAGnitude=[]
+for i in range(0,5):
+    MAGnitude.append(0)
 
 def calculate_steady_state(matrix):
     
@@ -1000,16 +1003,22 @@ for i in range(0,loaded):
         hlkop=int(next_state)
         #print(hlkop)
         res=calculate_steady_state(matrix_out_list[hlkop])
+        
+       
+        resh.append(res.tolist())
         print("Steady-State Vector:", res)
         magnitudeK=0
         for i in range(0,len(matrix_out_list[hlkop])):
             magnitudeK+=math.pow(res[i],2)
+            MAGnitude[i]=math.sqrt(magnitudeK)
+           
         print("Magnitude: ",math.sqrt(magnitudeK))
         #print(transition_matrix[current_state][hlkop])
+        
         print(f"term {day + 1}: {next_state}")
         current_state = next_state
-        
-    
+print(MAGnitude)
+print(resh)    
     #if(round((int(bit_string,2)/256)*100)==100):
      #   print("state sucessfully reached!")
      #   break
