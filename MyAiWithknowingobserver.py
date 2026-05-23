@@ -1,7 +1,7 @@
 import random
 import math
 import numpy as np
-
+Ang=[]
 resh=[]   
 
 MAGnitude=[]
@@ -1011,15 +1011,22 @@ for i in range(0,loaded):
         for i in range(0,len(matrix_out_list[hlkop])):
             magnitudeK+=math.pow(res[i],2)
             MAGnitude[i]=math.sqrt(magnitudeK)
-           
+            
         print("Magnitude: ",math.sqrt(magnitudeK))
         #print(transition_matrix[current_state][hlkop])
         
         print(f"term {day + 1}: {next_state}")
         current_state = next_state
+print("magnitude: ")
 print(MAGnitude)
 print()
+print("maatrix: ")
 print(resh)    
+for io in range(0,5):
+    for i in range(0,5):
+        Ang.append(math.acos(resh[io][i]/MAGnitude[i]))
+print("angles: ")
+print(Ang)
     #if(round((int(bit_string,2)/256)*100)==100):
      #   print("state sucessfully reached!")
      #   break
