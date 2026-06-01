@@ -88,7 +88,13 @@ def ld(k,kl,lk,kix,ifg):
         ki=float((hk-kix)/kl)
         kl=float((hk+ifg)/lk)
         okd=float((hk-ifg)/-lk)
-        return hu(r(ui,okd),r(ki,ui),r(ui,kl),r(okd,ui))    
-import numpy as np        
-for i in range(2,100):
-    print(np.linalg.det(ld(i,3,2,4,4)))
+        return hu(r(ui,okd),r(ki,ui),r(ui,kl),r(okd,ui)) 
+def reward(i,klo,mol,lopo,oop):
+    import numpy as np        
+    if(i!=0):
+        print(np.linalg.det(ld(abs(i),oop,lopo,klo,mol)))
+        return np.linalg.det(ld(abs(i),oop,lopo,klo,mol))
+    else:
+        print(0)
+        return 0
+reward(2,4,3,4,5)
