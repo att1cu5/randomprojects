@@ -92,9 +92,26 @@ def ld(k,kl,lk,kix,ifg):
 def reward(i,klo,mol,lopo,oop):
     import numpy as np        
     if(i!=0):
-        print(np.linalg.det(ld(abs(i),oop,lopo,klo,mol)))
+        #print(np.linalg.det(ld(abs(i),oop,lopo,klo,mol)))
         return np.linalg.det(ld(abs(i),oop,lopo,klo,mol))
     else:
-        print(0)
+        #print(0)
         return 0
-reward(2,4,3,4,5)
+def direction(x):
+    nstate=0
+    cstate=0
+    if(x.imag>0):
+        cstate=1
+    elif(x.imag<0):
+        cstate=-1
+    else:
+        cstate=0
+    if(x.real>0):
+        nstate=1
+    elif(x.real<0):
+        nstate=-1
+    else:
+        nstate=0
+    print(cstate,nstate)
+    return cstate,nstate
+direction(reward(3,2,5,8,1))
