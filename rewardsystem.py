@@ -2,7 +2,7 @@ a=1
 fg=0
 def ran(v,kl,lo,h):
     
-    return (kl**2)-(h+lo)%v
+    return (((kl**2))%v)-h*lo
 def f(x):
     return x+1
 def g(a):
@@ -65,15 +65,30 @@ def nmartrix(l,o,d,k,lo,kl,op,dpi):
     return matrix(l,o,op,dpi)*weight(d,k,lo)[kl]
 
 def j(v,vf,k,l,p,o,pl,ok,plk,plkl,okl): 
-    ko=ran(3,2,-1,4)
-    kop=ran(5,6,-1,8)
-    for i in range(v,vf):
-        ko+=nmartrix(k,l,p,o,pl,0,plk,ok)
-        kop+=nmartrix(k,l,p,o,pl,1,plkl,okl)
+
+   
+    ko=nmartrix(k,l,p,o,pl,0,plk,ok)+ran(3,2,1,4)
+    kop=nmartrix(k,l,p,o,pl,1,plkl,okl)-ran(7,9,2,8)
     return ko,kop
-def hu():
+def hu(h,k,l,o):
+    import numpy as np
     #import random
     #h=random.choice([0,1])
     #j(-4,3,0.6,0.2,3,4,3,-4,6,-2,7)[1]
-    return j(-4,3,2,-0.2,3,4,3,-2,2,3,-3)[0]*j(-4,3,-0.2,2,3,4,3,-2,2,5,-3)[1]
-print(hu())
+    g=j(-2,3,-0.2,2,3,5,3,-2,2,5,-3)[1]*np.array([[-h,k],[l,-o]])
+    return j(-4,3,2,-0.2,3,4,3,-2,2,3,-3)[0]*g
+def r(xv,kl):
+    return float(xv**kl)
+def k(v,s):
+    return float(v*s)
+def ld(k):
+    jkl=0
+    for i in range(0,k):
+        hk=float(i)
+        ui=float((hk+2)/3)
+        ki=float((hk-2)/-3)
+        kl=float((hk+5)/4)
+        okd=float((hk-5)/-4)
+        print(ui)
+        
+ld(3)
