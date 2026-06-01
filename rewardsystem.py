@@ -114,4 +114,7 @@ def direction(x):
         nstate=0
     print(cstate,nstate)
     return cstate,nstate
-direction(reward(3,2,5,8,1))
+def io(hj,ko,pl,ol,kp,kolp):    
+    for i in range(-kolp,kolp):
+        direction(reward(i+hj,i-ko,i-pl,i-ol,i+kp))
+io(4,4,6,7,9,3)
