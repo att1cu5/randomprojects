@@ -78,17 +78,17 @@ def hu(h,k,l,o):
     g=j(-2,3,-0.2,2,3,5,3,-2,2,5,-3)[1]*np.array([[-h,k],[l,-o]])
     return j(-4,3,2,-0.2,3,4,3,-2,2,3,-3)[0]*g
 def r(xv,kl):
-    return float(xv**kl)
-def k(v,s):
-    return float(v*s)
-def ld(k):
+    return xv**kl
+
+def ld(k,kl,lk,kix,ifg):
     jkl=0
     for i in range(0,k):
-        hk=float(i)
-        ui=float((hk+2)/3)
-        ki=float((hk-2)/-3)
-        kl=float((hk+5)/4)
-        okd=float((hk-5)/-4)
-        print(ui)
-        
-ld(3)
+        hk=float(i-k)
+        ui=float((hk+kix)/-kl)
+        ki=float((hk-kix)/kl)
+        kl=float((hk+ifg)/lk)
+        okd=float((hk-ifg)/-lk)
+        return hu(r(ui,okd),r(ki,ui),r(ui,kl),r(okd,ui))    
+import numpy as np        
+for i in range(2,100):
+    print(np.linalg.det(ld(i,3,2,4,4)))
