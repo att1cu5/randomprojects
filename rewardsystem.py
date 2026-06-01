@@ -1,5 +1,6 @@
 a=1
 fg=0
+alphabet=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","."]
 def ran(v,kl,lo,h):
     
     return (((kl**2))%v)-h*lo
@@ -100,21 +101,33 @@ def reward(i,klo,mol,lopo,oop):
 def direction(x):
     nstate=0
     cstate=0
+    rstate=0
     if(x.imag>0):
         cstate=1
     elif(x.imag<0):
-        cstate=-1
+        cstate=2
     else:
         cstate=0
     if(x.real>0):
         nstate=1
     elif(x.real<0):
-        nstate=-1
+        nstate=2
     else:
         nstate=0
-    print(cstate,nstate)
-    return cstate,nstate
-def io(hj,ko,pl,ol,kp,kolp):    
-    for i in range(-kolp,kolp):
-        direction(reward(i+hj,i-ko,i-pl,i-ol,i+kp))
-io(4,4,6,7,9,3)
+    if(x.real>x.imag):
+        rstate=1
+    elif(x.real<x.imag):
+        rstate=2
+    else:
+        rstate=0
+    #print(cstate,nstate,rstate)
+    return cstate,nstate,rstate
+def io(hj,ko,pl,ol,kp,i):    
+    return direction(reward(i+hj,i-ko,i-pl,i-ol,i+kp))
+gh=io(4,8,6,-10,8,3)
+x=2
+val=0
+for i in range(1,4):
+    val+=gh[i-1]*(3**(x))
+    x-=1
+print(alphabet[val])
