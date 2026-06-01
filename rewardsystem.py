@@ -124,10 +124,11 @@ def direction(x):
     return cstate,nstate,rstate
 def io(hj,ko,pl,ol,kp,i):    
     return direction(reward(i+hj,i-ko,i-pl,i-ol,i+kp))
-gh=io(4,8,6,-10,8,3)
-x=2
-val=0
 for i in range(1,4):
-    val+=gh[i-1]*(3**(x))
-    x-=1
-print(alphabet[val])
+    gh=io(4,8,3,-10,8,i+2)
+    x=2
+    val=0
+    for i in range(1,4):
+        val+=gh[i-1]*(3**(x))
+        x-=1
+    print(alphabet[val],end="")
