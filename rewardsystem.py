@@ -1,5 +1,6 @@
 a=1
 fg=0
+
 alphabet=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","."]
 def ran(v,kl,lo,h):
     
@@ -124,22 +125,43 @@ def direction(x):
     return cstate,nstate,rstate
 def io(hj,ko,pl,ol,kp,i):    
     return direction(reward(i+hj,i-ko,i-pl,i-ol,i+kp))
-
-for o in range(-100,100):
-    try:
-        if(o!=-1 and o!=-2 and o!=-3 and o!=0 and o!=-4):
-            for i in range(1,4):
-                gh=io(100,8,3,-10,8,i+o)
-                x=2
-                val=0
+def wordmaker(xlo):
+    word=""
+    wordsa=["new","nor","..."]
+    for o in range(xlo,100):
+        try:
+            if(o!=-1 and o!=-2 and o!=-3 and o!=0 and o!=-4):
                 for i in range(1,4):
-                    val+=gh[i-1]*(3**(x))
-                    x-=1
-                print(alphabet[val],end="")
-            print()    
-    except ZeroDivisionError: 
+                    gh=io(100,8,3,-10,8,i+o)
+                    x=2
+                    val=0
+                    for i in range(1,4):
+                        val+=gh[i-1]*(3**(x))
+                        x-=1
+                    word+=alphabet[val]
+                if(len(word)==3):
+                    break
+                print()    
+        except ZeroDivisionError: 
+            
+            
+            print(end="")
         
-        
-        print(end="")
+    if(word==wordsa[0]):
+        return 1,word
+    if(word==wordsa[1]):
+        return 3,word
+    if(word==wordsa[2]):
+        return 2, word 
+    else:
+        return 0,"naw"
+def wordchecks():
+    import random
+    for i in range(-100,100):   
+        h=random.randint(-100,70)
+        #print(h,wordmaker(h))
+    return wordmaker(h)
+
+if(wordchecks()[0]!=0):
+    print(wordchecks()[1],end=" ")
     
-        
