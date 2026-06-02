@@ -124,15 +124,22 @@ def direction(x):
     return cstate,nstate,rstate
 def io(hj,ko,pl,ol,kp,i):    
     return direction(reward(i+hj,i-ko,i-pl,i-ol,i+kp))
+
 for o in range(-100,100):
-    if(o!=0):
-        for i in range(1,4):
-            gh=io(100,8,3,-10,8,i+o)
-            x=2
-            val=0
+    try:
+        if(o!=-1 and o!=-2 and o!=-3 and o!=0 and o!=-4):
             for i in range(1,4):
-                val+=gh[i-1]*(3**(x))
-                x-=1
-            print(alphabet[val],end="")
-        print()    
+                gh=io(100,8,3,-10,8,i+o)
+                x=2
+                val=0
+                for i in range(1,4):
+                    val+=gh[i-1]*(3**(x))
+                    x-=1
+                print(alphabet[val],end="")
+            print()    
+    except ZeroDivisionError: 
+        
+        
+        print(end="")
+    
         
