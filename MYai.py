@@ -989,8 +989,8 @@ for i in range(0,loaded):
     #print("matrix selected: ",transition_matrix)
     for day in range(length):
     # Choose the next state based on the current state's probabilities
-        
-        next_state = secrets.choice(states, weights=transition_matrix[current_state])[0]
+        import random
+        next_state = random.choice(states, weights=transition_matrix[current_state])[0]
         hlkop=int(next_state)
         #print(hlkop)
         res=calculate_steady_state(matrix_out_list[hlkop])
