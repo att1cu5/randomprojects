@@ -1,4 +1,20 @@
-import random
+import secrets
+def truerandom(y,x):
+            import secrets
+            
+            class DynamicRandom:
+                def __init__(self, min_val, max_val):
+                    self.min_val = min_val
+                    self.max_val = max_val
+            
+                @property
+                def value(self):
+                    # Generates a secure float strictly between your limits
+                    return secrets.SystemRandom().uniform(self.min_val, self.max_val)
+            
+            # Set the limits between 10.5 and 25.0
+            live = DynamicRandom(y, x)
+            return live.value
 import math
 import numpy as np
 def calculate_steady_state(matrix):
@@ -302,6 +318,8 @@ def MAIN():
                 return f"{result:E}"  
         def randomG(a,c,limit,seed):
             return (a*seed+c)%limit
+            
+        
         def fgh(uoijd,lijk,urei):
             return uoijd
         DOWNLIST=[0]
@@ -325,7 +343,7 @@ def MAIN():
             
                 import math
                 import time
-                #import random
+               
                 start = time.perf_counter()
                 Astart = time.process_time()
                 avgchangeinpercentone=0
@@ -404,9 +422,9 @@ def MAIN():
                   
                     def hj(lo,po,ikl,low,high):
                         
-                        import random
                         
-                        ui=randomG(randomG(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-pow(2,32),pow(2,32)),random.uniform(-1,1)),randomG(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-pow(2,32),pow(2,32)),random.uniform(-1,1)),(lo+po+ikl)*100,randomG(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-pow(2,32),pow(2,32)),random.uniform(-1,1)))
+                        
+                        ui=truerandom(low,high)
                         
                       
                       
@@ -725,7 +743,7 @@ def MAIN():
         maxA=math.sqrt(2)/math.sqrt(LENGTH)
         #print(maxA)
         Ktimes=(2*math.pi)/Lambdas
-        import random
+        
         #N=randomG(random.uniform(-1,1),random.uniform(-1,1),random.uniform(-pow(2,32),pow(2,32)),random.uniform(-1,1))
         N=idf
         #print(Ktimes)
@@ -804,7 +822,7 @@ def MAIN():
     
     #print(normalizedproduct)
     
-    txt=random.choice(prob)
+    txt=secrets.choice(prob)
     DATAencrypt=''.join(format(ord(char), '08b') for char in txt)
     
     
@@ -972,7 +990,7 @@ for i in range(0,loaded):
     for day in range(length):
     # Choose the next state based on the current state's probabilities
         
-        next_state = random.choices(states, weights=transition_matrix[current_state])[0]
+        next_state = secrets.choices(states, weights=transition_matrix[current_state])[0]
         hlkop=int(next_state)
         #print(hlkop)
         res=calculate_steady_state(matrix_out_list[hlkop])
@@ -989,6 +1007,7 @@ for i in range(0,loaded):
     #if(round((int(bit_string,2)/256)*100)==100):
      #   print("state sucessfully reached!")
      #   break
+
 
 
 
