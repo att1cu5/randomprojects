@@ -1,5 +1,8 @@
 import secrets
 import random
+def convertr(cv):
+    import math
+    return cv*(180/math.pi)
 def truerandom(y,x):
             import secrets
             
@@ -1000,12 +1003,17 @@ for i in range(0,loaded):
         for i in range(0,len(matrix_out_list[hlkop])):
             magnitudeK+=math.pow(res[i],2)
         print("Magnitude: ",math.sqrt(magnitudeK))
+        for i in range(0,len(matrix_out_list[hlkop])):
+            angleofvec=math.acos(res[i]/math.sqrt(magnitudeK))
+            print("Angle in "+str(i+1)+" dimension is: ",convertr(angleofvec)," degrees")
         #print(transition_matrix[current_state][hlkop])
         print(f"term {day + 1}: {next_state}")
         current_state = next_state
         
     
-
+    #if(round((int(bit_string,2)/256)*100)==100):
+     #   print("state sucessfully reached!")
+     #   break
 
 
 
