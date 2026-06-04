@@ -1040,7 +1040,7 @@ for i in range(0,loaded):
             else:
                 angleAbc*=math.cos(angleofvec)
         angleAbc=angleAbc*rad 
-        print(angleAbc)
+        print("radiusA: ",angleAbc)
         #print(transition_matrix[current_state][hlkop])
         print(f"term {day + 1}: {next_state}")
         current_state = next_state
@@ -1064,7 +1064,7 @@ for i in range(0,loaded):
             else:
                 angleAb*=math.cos(angleofvecr)
         angleAb=angleAb*rads    
-        print(angleAb)
+        print("radiusB: ",angleAb)
         #print(transition_matrix[current_state][hlkop])
         print(f"term {day + 1}: {next_stated}")
         current_stated = next_stated
