@@ -1005,9 +1005,7 @@ for i in range(0,loaded):
         current_state = next_state
         
     
-    #if(round((int(bit_string,2)/256)*100)==100):
-     #   print("state sucessfully reached!")
-     #   break
+
 
 
 
