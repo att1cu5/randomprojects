@@ -1029,11 +1029,18 @@ for i in range(0,loaded):
             magnitudeK+=math.pow(res[i],2)
         print("Magnitude: ",math.sqrt(magnitudeK))
         rad=math.sqrt(magnitudeK)
+        angleAbc=1
         for i in range(0,len(matrix_out_list[hlkop])):
             angleofvec=math.acos(res[i]/math.sqrt(magnitudeK))
             
             
             print("Angle in "+str(i+1)+" dimension is: ",convertr(angleofvec)," degrees")
+            if(i<len(matrix_out_list[hlkop])-1):
+                angleAbc*=math.sin(angleofvec)
+            else:
+                angleAbc*=math.cos(angleofvec)
+        angleAbc=angleAbc*rad 
+        print(angleAbc)
         #print(transition_matrix[current_state][hlkop])
         print(f"term {day + 1}: {next_state}")
         current_state = next_state
@@ -1047,10 +1054,17 @@ for i in range(0,loaded):
             magnitudeKt+=math.pow(resk[i],2)
         print("Magnitude: ",math.sqrt(magnitudeKt))
         rads=math.sqrt(magnitudeKt)
+        angleAb=1
         for i in range(0,len(matrix_out_list[hlkorp])):
             angleofvecr=math.acos(res[i]/math.sqrt(magnitudeK))
             
             print("Angle in "+str(i+1)+" dimension is: ",convertr(angleofvecr)," degrees")
+            if(i<len(matrix_out_list[hlkorp])-1):
+                angleAb*=math.sin(angleofvecr)
+            else:
+                angleAb*=math.cos(angleofvecr)
+        angleAb=angleAb*rads    
+        print(angleAb)
         #print(transition_matrix[current_state][hlkop])
         print(f"term {day + 1}: {next_stated}")
         current_stated = next_stated
